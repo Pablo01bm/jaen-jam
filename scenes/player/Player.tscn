@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cdalhwxrd4yyq"]
+
+[ext_resource type="Script" uid="uid://bvxmcbw5g0yb2" path="res://scenes/player/player.gd" id="1_wr5hl"]
+[ext_resource type="Script" uid="uid://cml4nuk5k2ym2" path="res://utils/state_machine/state_machine.gd" id="2_gfjak"]
+
+[node name="Player" type="CharacterBody2D" unique_id=2078430885]
+script = ExtResource("1_wr5hl")
+
+[node name="StateMachine" type="Node" parent="." unique_id=2056001486]
+script = ExtResource("2_gfjak")
