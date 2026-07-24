@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dkhfai5amj0mv"]
+
+[ext_resource type="Script" uid="uid://durlumrvic00x" path="res://scenes/TestingAlien/testing_alien.gd" id="1_48vvr"]
+[ext_resource type="Texture2D" uid="uid://dbmmayky4ocbv" path="res://icon.svg" id="2_hmm44"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_by4yl"]
+
+[node name="TestingAlien" type="CharacterBody2D" unique_id=1485095013]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_48vvr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=292735247]
+texture = ExtResource("2_hmm44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50131872]
+scale = Vector2(5.81, 5.81)
+shape = SubResource("CircleShape2D_by4yl")
