@@ -1,4 +1,5 @@
 extends Node2D
+class_name AlienFace
 
 @export var attributes = [0, 0, 0, 0, 0, 0]
 @export var attr_range = [5, 5, 6, 5, 4, 4]
