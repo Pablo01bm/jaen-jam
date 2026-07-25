@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mw1b"]
 
 [node name="Player" type="Node2D" unique_id=126226238]
-z_index = 10
+z_index = 100
 script = ExtResource("1_gfjak")
 
 [node name="Heircross" type="Area2D" parent="." unique_id=1278668603]

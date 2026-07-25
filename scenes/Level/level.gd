@@ -17,6 +17,7 @@ func _ready() -> void:
 	_collect_aliens()
 	_generate_hijoputas()
 	GameManager.register_level(self)
+	_assign_z_index()
 
 
 func _collect_aliens() -> void:
@@ -78,3 +79,10 @@ func _on_alien_died(alien: Alien) -> void:
 
 func _check_victory() -> void:
 	level_completed.emit()
+
+func _assign_z_index() -> void:
+	var aliensNode = get_node("Aliens")
+	var i = 0
+	for childAlien in aliensNode.get_children():
+		childAlien.z_index = i
+		i+=1

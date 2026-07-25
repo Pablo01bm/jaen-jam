@@ -6,6 +6,7 @@ signal died(alien: Alien)
 var SPEED_X = RandomNumberGenerator.new()
 var SPEED_Y = RandomNumberGenerator.new()
 var RANDOM = RandomNumberGenerator.new()
+@export var Z_INDEX_VALUE = 0
 
 var is_hijoputa: bool = false
 
@@ -17,6 +18,7 @@ func _ready():
 	SPEED_Y = SPEED_Y.randf_range(-200.0, 200.0)
 	velocity.x = SPEED_X
 	velocity.y = SPEED_Y
+	z_index = Z_INDEX_VALUE
 
 
 func _physics_process(delta):

@@ -7,46 +7,49 @@
 
 [node name="LevelA" type="Node2D" unique_id=1252264966]
 script = ExtResource("1_pth44")
+velocidad = null
 
 [node name="TestingBouncing" parent="." unique_id=633372936 instance=ExtResource("2_ceoao")]
 
 [node name="Player" parent="." unique_id=126226238 instance=ExtResource("4_ceoao")]
 
-[node name="Alien" parent="." unique_id=1485095013 instance=ExtResource("3_xjaht")]
+[node name="Aliens" type="Node2D" parent="." unique_id=2108784629]
+
+[node name="Alien" parent="Aliens" unique_id=1485095013 instance=ExtResource("3_xjaht")]
 position = Vector2(1034, 528)
 
-[node name="Alien2" parent="." unique_id=2002073948 instance=ExtResource("3_xjaht")]
+[node name="Alien2" parent="Aliens" unique_id=2002073948 instance=ExtResource("3_xjaht")]
 position = Vector2(326, 221)
 
-[node name="Alien3" parent="." unique_id=905469524 instance=ExtResource("3_xjaht")]
+[node name="Alien3" parent="Aliens" unique_id=905469524 instance=ExtResource("3_xjaht")]
 position = Vector2(830, 249)
 
-[node name="Alien4" parent="." unique_id=545454846 instance=ExtResource("3_xjaht")]
+[node name="Alien4" parent="Aliens" unique_id=545454846 instance=ExtResource("3_xjaht")]
 position = Vector2(205, 499)
 
-[node name="Alien5" parent="." unique_id=806084223 instance=ExtResource("3_xjaht")]
+[node name="Alien5" parent="Aliens" unique_id=806084223 instance=ExtResource("3_xjaht")]
 position = Vector2(1334, 718)
 
-[node name="Alien6" parent="." unique_id=552445047 instance=ExtResource("3_xjaht")]
+[node name="Alien6" parent="Aliens" unique_id=552445047 instance=ExtResource("3_xjaht")]
 position = Vector2(475, 371)
 
-[node name="Alien7" parent="." unique_id=1918898411 instance=ExtResource("3_xjaht")]
+[node name="Alien7" parent="Aliens" unique_id=1918898411 instance=ExtResource("3_xjaht")]
 position = Vector2(150, 120)
 
-[node name="Alien8" parent="." unique_id=2004046912 instance=ExtResource("3_xjaht")]
+[node name="Alien8" parent="Aliens" unique_id=2004046912 instance=ExtResource("3_xjaht")]
 position = Vector2(590, 175)
 
-[node name="Alien9" parent="." unique_id=2147357109 instance=ExtResource("3_xjaht")]
+[node name="Alien9" parent="Aliens" unique_id=2147357109 instance=ExtResource("3_xjaht")]
 position = Vector2(992, 739)
 
-[node name="Alien10" parent="." unique_id=1156260577 instance=ExtResource("3_xjaht")]
+[node name="Alien10" parent="Aliens" unique_id=1156260577 instance=ExtResource("3_xjaht")]
 position = Vector2(264, 772)
 
-[node name="Alien11" parent="." unique_id=1766448357 instance=ExtResource("3_xjaht")]
+[node name="Alien11" parent="Aliens" unique_id=1766448357 instance=ExtResource("3_xjaht")]
 position = Vector2(648, 545)
 
-[node name="Alien12" parent="." unique_id=139766061 instance=ExtResource("3_xjaht")]
+[node name="Alien12" parent="Aliens" unique_id=139766061 instance=ExtResource("3_xjaht")]
 position = Vector2(1161, 280)
 
-[node name="Alien13" parent="." unique_id=1799475700 instance=ExtResource("3_xjaht")]
+[node name="Alien13" parent="Aliens" unique_id=1799475700 instance=ExtResource("3_xjaht")]
 position = Vector2(509, 740)
