@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cqri3opumh4kr"]
+
+[ext_resource type="Texture2D" uid="uid://b77r53vqtctap" path="res://scenes/ovni_particles/broken_ovni.png" id="1_b557v"]
+[ext_resource type="Script" uid="uid://ceq33splfeyny" path="res://scenes/ovni_particles/good_ovni_particle.gd" id="1_u4xf2"]
+[ext_resource type="Texture2D" uid="uid://dfvtsivmb6deg" path="res://scenes/ovni_particles/smoke2.png" id="2_u4xf2"]
+[ext_resource type="Gradient" uid="uid://8fuf2fpvwius" path="res://assets/smoke_ramp.tres" id="4_lsxvf"]
+[ext_resource type="Texture2D" uid="uid://dtkk0ipjss5v2" path="res://scenes/ovni_particles/smoke3.png" id="4_xb8xd"]
+
+[node name="GoodOvniParticle" type="CharacterBody2D" unique_id=1202523900]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_u4xf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2090502026]
+texture = ExtResource("1_b557v")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=135153439]
+position = Vector2(11, -13)
+amount = 24
+texture = ExtResource("2_u4xf2")
+lifetime = 4.0
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 15.45
+gravity = Vector2(0, -200)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+color = Color(1, 1, 1, 0.7921569)
+color_ramp = ExtResource("4_lsxvf")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1385617642]
+position = Vector2(11, -13)
+amount = 12
+texture = ExtResource("4_xb8xd")
+lifetime = 4.0
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 15.45
+gravity = Vector2(0, -200)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+color = Color(1, 1, 1, 0.7921569)
+color_ramp = ExtResource("4_lsxvf")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=525877685]
+
+[node name="Timer" type="Timer" parent="." unique_id=208318825]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
