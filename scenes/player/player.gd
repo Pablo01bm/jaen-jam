@@ -15,6 +15,12 @@ func _process(delta: float) -> void:
 
 
 func _shoot() -> void:
+	var aux = -1;
+	var aux_body
 	for body in $Heircross.get_overlapping_bodies():
 		if body is Alien:
-			body.receive_hit()
+			if aux < body.z_index:
+				aux = body.z_index
+				aux_body = body
+	if aux_body != null:
+		aux_body.receive_hit()
