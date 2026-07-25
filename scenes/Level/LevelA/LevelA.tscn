@@ -62,3 +62,14 @@ position = Vector2(509, 740)
 position = Vector2(17, -4)
 
 [node name="Camera" parent="." unique_id=1566412125 instance=ExtResource("6_6rpnw")]
+
+[node name="Timer" type="Timer" parent="." unique_id=306255501]
+wait_time = 29.247
+one_shot = true
+
+[node name="TimeLeft" type="Label" parent="." unique_id=2075339793]
+offset_left = -57.0
+offset_top = -492.0
+offset_right = 56.0
+offset_bottom = -441.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)

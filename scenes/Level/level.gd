@@ -4,7 +4,8 @@ class_name Level
 ## Emitido cuando los 3 hijoputas han sido dedeados
 signal level_completed
 
-const HIJOPUTA_COUNT := 3
+
+@export var HIJOPUTA_COUNT := 1
 const MAX_REROLL_TRIES := 30
 
 @export var velocidad: float = 150.0
@@ -18,7 +19,11 @@ func _ready() -> void:
 	_generate_hijoputas()
 	GameManager.register_level(self)
 	_assign_z_index()
+	GameGlobals.is_closed.connect(_start_timer)
+	$Timer.timeout.connect(_game_over)
 
+func _process(delta):
+	$TimeLeft.text = str($Timer.time_left)
 
 func _collect_aliens() -> void:
 	m_aliens.clear()
@@ -84,6 +89,14 @@ func _on_alien_died(alien: Alien) -> void:
 
 func _check_victory() -> void:
 	level_completed.emit()
+	GameGlobals.score += ($Timer.wait_time - $Timer.time_left)
+	$Timer.stop()
+	
+
+func _game_over() -> void:
+	$Timer.stop()
+	GameGlobals.alien_motherfuckers.clear()
+	GameManager.game_over()
 
 func _assign_z_index() -> void:
 	var aliensNode = get_node("Aliens")
@@ -91,3 +104,7 @@ func _assign_z_index() -> void:
 	for childAlien in aliensNode.get_children():
 		childAlien.z_index = i
 		i+=1
+
+func _start_timer() -> void:
+	if $Timer.time_left == 0:
+		$Timer.start()

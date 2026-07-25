@@ -1,3 +1,57 @@
 [gd_scene format=3 uid="uid://bsmsqo545kdhf"]
 
+[ext_resource type="PackedScene" uid="uid://bovf6uisn75g4" path="res://scenes/TestingBouncing/TestingBouncing.tscn" id="1_q4l64"]
+[ext_resource type="Script" uid="uid://dbwg2lodhtsc7" path="res://scenes/Level/level.gd" id="1_sjv5f"]
+[ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="2_sjv5f"]
+[ext_resource type="PackedScene" uid="uid://dkhfai5amj0mv" path="res://scenes/Alien/Alien.tscn" id="3_j36be"]
+[ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="4_lqic7"]
+[ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="5_2tlph"]
+
 [node name="LevelB" type="Node2D" unique_id=1545661808]
+script = ExtResource("1_sjv5f")
+
+[node name="TestingBouncing" parent="." unique_id=633372936 instance=ExtResource("1_q4l64")]
+position = Vector2(-750, -500)
+
+[node name="Player" parent="." unique_id=126226238 instance=ExtResource("2_sjv5f")]
+position = Vector2(-750, -500)
+
+[node name="Aliens" type="Node2D" parent="." unique_id=1280121714]
+position = Vector2(-750, -500)
+
+[node name="Alien" parent="Aliens" unique_id=1485095013 instance=ExtResource("3_j36be")]
+position = Vector2(1034, 528)
+
+[node name="Alien2" parent="Aliens" unique_id=383292592 instance=ExtResource("3_j36be")]
+position = Vector2(326, 221)
+
+[node name="Alien3" parent="Aliens" unique_id=1049970526 instance=ExtResource("3_j36be")]
+position = Vector2(830, 249)
+
+[node name="Alien4" parent="Aliens" unique_id=2032595669 instance=ExtResource("3_j36be")]
+position = Vector2(205, 499)
+
+[node name="Alien5" parent="Aliens" unique_id=1384696507 instance=ExtResource("3_j36be")]
+position = Vector2(1334, 718)
+
+[node name="Alien6" parent="Aliens" unique_id=2044841206 instance=ExtResource("3_j36be")]
+position = Vector2(475, 371)
+
+[node name="Alien7" parent="Aliens" unique_id=159166642 instance=ExtResource("3_j36be")]
+position = Vector2(150, 120)
+
+[node name="WantedList" parent="." unique_id=1691400195 instance=ExtResource("4_lqic7")]
+position = Vector2(17, -4)
+
+[node name="Camera" parent="." unique_id=1566412125 instance=ExtResource("5_2tlph")]
+
+[node name="Timer" type="Timer" parent="." unique_id=1023940870]
+wait_time = 29.247
+one_shot = true
+
+[node name="TimeLeft" type="Label" parent="." unique_id=1121729152]
+offset_left = -57.0
+offset_top = -492.0
+offset_right = 56.0
+offset_bottom = -441.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)

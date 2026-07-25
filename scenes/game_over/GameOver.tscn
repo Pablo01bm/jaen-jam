@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://cwwiutdklto20"]
 
+[ext_resource type="Script" uid="uid://b72k2xeghvlvq" path="res://scenes/game_over/game_over.gd" id="1_alkiy"]
+
 [node name="GameOver" type="Node2D" unique_id=603088769]
+script = ExtResource("1_alkiy")
 
 [node name="Label" type="Label" parent="." unique_id=1157421707]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "game over"

@@ -23,6 +23,8 @@ func _on_area_2d_mouse_exited() -> void:
 
 
 func move_up():
+	GameGlobals.is_opened.emit()
+	
 	if tween != null:
 		tween.stop()
 		tween.kill()
@@ -34,6 +36,7 @@ func move_up():
 	
 
 func move_down():
+	GameGlobals.is_closed.emit()
 	if tween != null:
 		tween.stop()
 		tween.kill()

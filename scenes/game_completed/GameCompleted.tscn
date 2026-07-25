@@ -1,8 +1,20 @@
 [gd_scene format=3 uid="uid://b2ry6foucuy0y"]
 
+[ext_resource type="Script" uid="uid://b451wq1s5sead" path="res://scenes/game_completed/game_completed.gd" id="1_mbt3w"]
+
 [node name="GameCompleted" type="Node2D" unique_id=1516626381]
+script = ExtResource("1_mbt3w")
 
 [node name="Label" type="Label" parent="." unique_id=460289877]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "game completed"
+
+[node name="Score" type="Label" parent="." unique_id=757037667]
+offset_left = 20.0
+offset_top = 32.0
+offset_right = 149.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "game completed"
