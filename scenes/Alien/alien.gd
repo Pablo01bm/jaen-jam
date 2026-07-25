@@ -20,7 +20,6 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	
 	if collision:
-		print("HOLA")
 		velocity = velocity.bounce(collision.get_normal().rotated(RANDOM.randf_range(-10.0, 10.0)))
 		
 
