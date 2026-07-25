@@ -37,14 +37,14 @@ func _shoot() -> void:
 		var aux = -1;
 		var aux_body
 		for body in $Heircross.get_overlapping_bodies():
-			if body is Alien:
+			if body is Alien or body is Hazard:
 				if aux < body.z_index:
 					aux = body.z_index
 					aux_body = body
 		if aux_body != null:
 			aux_body.receive_hit()
-			
-		GameGlobals.shake_camera.emit()
+			if aux_body is Alien:
+				GameGlobals.shake_camera.emit()
 
 func _prepare_mouse() -> void:
 	is_shooting = true

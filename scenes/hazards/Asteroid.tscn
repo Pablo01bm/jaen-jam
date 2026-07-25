@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cltva7cb4r015"]
+
+[ext_resource type="Script" uid="uid://c87jd2tnydneb" path="res://scenes/hazards/asteroid.gd" id="1_ado12"]
+[ext_resource type="Texture2D" uid="uid://dhihhck5hb0qg" path="res://scenes/hazards/asteroid.png" id="1_ut7xl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pm288"]
+radius = 252.07141
+
+[node name="Asteroid" type="StaticBody2D" unique_id=602204702]
+z_index = 20
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ado12")
+
+[node name="Rotation" type="Node2D" parent="." unique_id=1401895924]
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotation" unique_id=893613785]
+position = Vector2(0, 78)
+texture = ExtResource("1_ut7xl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1851098747]
+shape = SubResource("CircleShape2D_pm288")
