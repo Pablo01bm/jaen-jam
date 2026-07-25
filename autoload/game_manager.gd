@@ -1,1 +1,25 @@
 extends Node
+
+
+func register_level(level: Level) -> void:
+	if not level.level_completed.is_connected(_on_level_completed):
+		level.level_completed.connect(_on_level_completed)
+
+
+func start_game() -> void:
+	GameGlobals.reset()
+	get_tree().change_scene_to_file(GameGlobals.LEVELS[0])
+
+
+func _on_level_completed() -> void:
+	GameGlobals.current_level_index += 1
+
+	if GameGlobals.current_level_index >= GameGlobals.LEVELS.size():
+		get_tree().change_scene_to_file(GameGlobals.GAME_COMPLETED_SCENE)
+	else:
+		var next_level_path: String = GameGlobals.LEVELS[GameGlobals.current_level_index]
+		get_tree().change_scene_to_file(next_level_path)
+
+
+func game_over() -> void:
+	get_tree().change_scene_to_file(GameGlobals.GAME_OVER_SCENE)

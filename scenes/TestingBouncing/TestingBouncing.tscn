@@ -19,6 +19,7 @@ script = ExtResource("1_by4yl")
 
 [node name="LeftWall" type="StaticBody2D" parent="." unique_id=624928931]
 position = Vector2(-10, 0)
+collision_layer = 4
 
 [node name="LeftColl" type="CollisionShape2D" parent="LeftWall" unique_id=1324058868]
 position = Vector2(0, 511.5)
@@ -26,6 +27,7 @@ shape = SubResource("RectangleShape2D_2awhe")
 
 [node name="AboveWall" type="StaticBody2D" parent="." unique_id=1857485449]
 position = Vector2(600, 0)
+collision_layer = 4
 
 [node name="AboveColl" type="CollisionShape2D" parent="AboveWall" unique_id=1787799359]
 position = Vector2(176.5, -9.5)
@@ -33,6 +35,7 @@ shape = SubResource("RectangleShape2D_rceta")
 
 [node name="RightWall" type="StaticBody2D" parent="." unique_id=1302062110]
 position = Vector2(1503, 0)
+collision_layer = 4
 
 [node name="RightColl" type="CollisionShape2D" parent="RightWall" unique_id=1074127657]
 position = Vector2(17.375, 512)
@@ -40,6 +43,7 @@ shape = SubResource("RectangleShape2D_j6lec")
 
 [node name="BelowWall" type="StaticBody2D" parent="." unique_id=269460182]
 position = Vector2(600, 1000)
+collision_layer = 4
 
 [node name="BelowColl" type="CollisionShape2D" parent="BelowWall" unique_id=2116020024]
 position = Vector2(180.5, 16.470032)

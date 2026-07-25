@@ -65,6 +65,11 @@ shoot={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_2="Aliens"
+2d_physics/layer_3="Walls"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
