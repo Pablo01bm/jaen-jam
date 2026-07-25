@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b61v1l040aqb5" path="res://scenes/player/player.gd" id="1_gfjak"]
 [ext_resource type="Texture2D" uid="uid://in4oglso3dn8" path="res://scenes/player/heircross.png" id="1_wr5hl"]
+[ext_resource type="Texture2D" uid="uid://dhtpkgd0cxpb8" path="res://scenes/player/pointer.png" id="3_4kuee"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mw1b"]
 
@@ -10,6 +11,7 @@ z_index = 100
 script = ExtResource("1_gfjak")
 
 [node name="Heircross" type="Area2D" parent="." unique_id=1278668603]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -23,3 +25,14 @@ shape = SubResource("CircleShape2D_2mw1b")
 [node name="AfterShoot" type="Timer" parent="." unique_id=1624877960]
 wait_time = 0.75
 one_shot = true
+
+[node name="Pointer" type="Area2D" parent="." unique_id=1318117262]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Pointer" unique_id=876036255]
+texture = ExtResource("3_4kuee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pointer" unique_id=1757033014]
+scale = Vector2(1.795, 1.795)
+shape = SubResource("CircleShape2D_2mw1b")

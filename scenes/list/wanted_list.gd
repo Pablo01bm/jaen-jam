@@ -1,13 +1,13 @@
 extends Node2D
 
 @onready var tween: Tween
-@export var wanted_aliend = []
-@onready var aliens = [$Sprite2D/Node2D/AlienFace,
-$Sprite2D/Node2D/AlienFace2,
-$Sprite2D/Node2D/AlienFace3]
+@export var wanted_aliens = []
+@onready var aliens = [%AlienFace1,
+%AlienFace2,
+%AlienFace3]
 
 func _ready() -> void:
-	for i in range(wanted_aliend.size()):
+	for i in range(wanted_aliens.size()):
 		aliens.get(i).visible = true
 
 func _process(delta: float) -> void:
@@ -23,6 +23,8 @@ func _on_area_2d_mouse_exited() -> void:
 
 
 func move_up():
+	GameGlobals.is_opened.emit()
+	
 	if tween != null:
 		tween.stop()
 		tween.kill()
@@ -34,6 +36,7 @@ func move_up():
 	
 
 func move_down():
+	GameGlobals.is_closed.emit()
 	if tween != null:
 		tween.stop()
 		tween.kill()
@@ -50,3 +53,15 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	move_down()
+
+func _update_alien_faces() -> void:
+	var i = 0
+	print("Updating motherfucker hijueputa otra vez corazon de viejita")
+	wanted_aliens = GameGlobals.alien_motherfuckers
+	print(wanted_aliens.size())
+	if wanted_aliens.size() > 0:
+		for bad_alien in wanted_aliens:
+			$Sprite2D/BadAliens.get_child(i).visible = true
+			$Sprite2D/BadAliens.get_child(i).update_face(bad_alien.get_info_array())
+			i += 1
+	

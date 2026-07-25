@@ -62,7 +62,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_pm288"]
 
 [node name="WantedList" type="Node2D" unique_id=1691400195]
-z_index = 9
+z_index = 20
 script = ExtResource("1_rh1oy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=110941739]
@@ -86,15 +86,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 79
 text = "WANTED!!"
 
-[node name="Node2D" type="Node2D" parent="Sprite2D" unique_id=1614716022]
+[node name="BadAliens" type="Node2D" parent="Sprite2D" unique_id=1614716022]
 position = Vector2(0, -4)
 
-[node name="AlienFace" parent="Sprite2D/Node2D" unique_id=548084301 instance=ExtResource("3_cbkq7")]
+[node name="AlienFace1" parent="Sprite2D/BadAliens" unique_id=548084301 instance=ExtResource("3_cbkq7")]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-192.00002, 17)
 scale = Vector2(2.4279292, 2.4279292)
 
-[node name="Label" type="Label" parent="Sprite2D/Node2D/AlienFace" unique_id=745761850]
+[node name="Label" type="Label" parent="Sprite2D/BadAliens/AlienFace1" unique_id=745761850]
 offset_left = 39.128006
 offset_top = -4.53061
 offset_right = 116.128006
@@ -102,12 +103,13 @@ offset_bottom = 18.46939
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Nombre 1"
 
-[node name="AlienFace2" parent="Sprite2D/Node2D" unique_id=1314295802 instance=ExtResource("3_cbkq7")]
+[node name="AlienFace2" parent="Sprite2D/BadAliens" unique_id=1314295802 instance=ExtResource("3_cbkq7")]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-192.00002, 208)
 scale = Vector2(2.4279292, 2.4279292)
 
-[node name="Label" type="Label" parent="Sprite2D/Node2D/AlienFace2" unique_id=1758248649]
+[node name="Label" type="Label" parent="Sprite2D/BadAliens/AlienFace2" unique_id=1758248649]
 offset_left = 39.128006
 offset_top = -4.53061
 offset_right = 116.128006
@@ -115,12 +117,13 @@ offset_bottom = 18.46939
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Nombre 1"
 
-[node name="AlienFace3" parent="Sprite2D/Node2D" unique_id=1907983893 instance=ExtResource("3_cbkq7")]
+[node name="AlienFace3" parent="Sprite2D/BadAliens" unique_id=1907983893 instance=ExtResource("3_cbkq7")]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-192.00002, 397)
 scale = Vector2(2.4279292, 2.4279292)
 
-[node name="Label" type="Label" parent="Sprite2D/Node2D/AlienFace3" unique_id=855332293]
+[node name="Label" type="Label" parent="Sprite2D/BadAliens/AlienFace3" unique_id=855332293]
 offset_left = 39.128006
 offset_top = -4.53061
 offset_right = 116.128006

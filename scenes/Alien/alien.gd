@@ -56,10 +56,12 @@ func die() -> void:
 	if is_hijoputa:
 		var particle = preload("res://scenes/ovni_particles/OvniParticle.tscn").instantiate()
 		particle.global_position = global_position
+		particle.z_index = z_index
 		get_parent().get_parent().add_child(particle)
 	else:
 		var particle = preload("res://scenes/ovni_particles/GoodOvniParticle.tscn").instantiate()
 		particle.global_position = global_position
+		particle.z_index = z_index
 		get_parent().get_parent().add_child(particle)
 	died.emit(self)
 	queue_free()
