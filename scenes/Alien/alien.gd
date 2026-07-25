@@ -8,7 +8,7 @@ var SPEED_Y = RandomNumberGenerator.new()
 var RANDOM = RandomNumberGenerator.new()
 @export var Z_INDEX_VALUE = 0
 
-var is_hijoputa: bool = false
+@export var is_hijoputa: bool = false
 
 @onready var face = %AlienFace
  
@@ -53,5 +53,13 @@ func receive_hit() -> void:
 	die()
 
 func die() -> void:
+	if is_hijoputa:
+		var particle = preload("res://scenes/ovni_particles/OvniParticle.tscn").instantiate()
+		particle.global_position = global_position
+		get_parent().get_parent().add_child(particle)
+	else:
+		var particle = preload("res://scenes/ovni_particles/GoodOvniParticle.tscn").instantiate()
+		particle.global_position = global_position
+		get_parent().get_parent().add_child(particle)
 	died.emit(self)
 	queue_free()

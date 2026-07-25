@@ -4,37 +4,49 @@
 [ext_resource type="PackedScene" uid="uid://bovf6uisn75g4" path="res://scenes/TestingBouncing/TestingBouncing.tscn" id="2_ceoao"]
 [ext_resource type="PackedScene" uid="uid://dkhfai5amj0mv" path="res://scenes/Alien/Alien.tscn" id="3_xjaht"]
 [ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="4_ceoao"]
+[ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="5_xjaht"]
+[ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="6_6rpnw"]
 
 [node name="LevelA" type="Node2D" unique_id=1252264966]
 script = ExtResource("1_pth44")
 velocidad = null
 
 [node name="TestingBouncing" parent="." unique_id=633372936 instance=ExtResource("2_ceoao")]
+position = Vector2(-750, -500)
 
 [node name="Player" parent="." unique_id=126226238 instance=ExtResource("4_ceoao")]
+position = Vector2(-750, -500)
 
 [node name="Aliens" type="Node2D" parent="." unique_id=2108784629]
+position = Vector2(-750, -500)
 
 [node name="Alien" parent="Aliens" unique_id=1485095013 instance=ExtResource("3_xjaht")]
 position = Vector2(1034, 528)
+is_hijoputa = true
 
 [node name="Alien2" parent="Aliens" unique_id=2002073948 instance=ExtResource("3_xjaht")]
 position = Vector2(326, 221)
+is_hijoputa = true
 
 [node name="Alien3" parent="Aliens" unique_id=905469524 instance=ExtResource("3_xjaht")]
 position = Vector2(830, 249)
+is_hijoputa = true
 
 [node name="Alien4" parent="Aliens" unique_id=545454846 instance=ExtResource("3_xjaht")]
 position = Vector2(205, 499)
+is_hijoputa = true
 
 [node name="Alien5" parent="Aliens" unique_id=806084223 instance=ExtResource("3_xjaht")]
 position = Vector2(1334, 718)
+is_hijoputa = true
 
 [node name="Alien6" parent="Aliens" unique_id=552445047 instance=ExtResource("3_xjaht")]
 position = Vector2(475, 371)
+is_hijoputa = true
 
 [node name="Alien7" parent="Aliens" unique_id=1918898411 instance=ExtResource("3_xjaht")]
 position = Vector2(150, 120)
+is_hijoputa = true
 
 [node name="Alien8" parent="Aliens" unique_id=2004046912 instance=ExtResource("3_xjaht")]
 position = Vector2(590, 175)
@@ -53,3 +65,8 @@ position = Vector2(1161, 280)
 
 [node name="Alien13" parent="Aliens" unique_id=1799475700 instance=ExtResource("3_xjaht")]
 position = Vector2(509, 740)
+
+[node name="WantedList" parent="." unique_id=1691400195 instance=ExtResource("5_xjaht")]
+position = Vector2(17, -4)
+
+[node name="Camera" parent="." unique_id=1566412125 instance=ExtResource("6_6rpnw")]
