@@ -14,6 +14,12 @@ func _process(delta: float) -> void:
 		_shoot()
 
 
+func debug_draw_explosion():
+	var explosion = preload("res://scenes/ovni_particles/OvniParticle.tscn").instantiate()
+	explosion.global_position = $Heircross.global_position
+	get_parent().add_child(explosion)
+
+
 func _shoot() -> void:
 	var aux = -1;
 	var aux_body
@@ -24,3 +30,5 @@ func _shoot() -> void:
 				aux_body = body
 	if aux_body != null:
 		aux_body.receive_hit()
+		
+	GameGlobals.shake_camera.emit()

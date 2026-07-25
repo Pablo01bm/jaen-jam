@@ -12,6 +12,8 @@ const GAME_OVER_SCENE := ""
  
 var current_level_index: int = 0
 var score: int = 0
+
+signal shake_camera
  
  
 func reset() -> void:
