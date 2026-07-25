@@ -30,3 +30,5 @@ func _shoot() -> void:
 				aux_body = body
 	if aux_body != null:
 		aux_body.receive_hit()
+		
+	GameGlobals.shake_camera.emit()

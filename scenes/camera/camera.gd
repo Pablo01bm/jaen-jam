@@ -38,7 +38,7 @@ func shake():
 	offset.x = max_offset.x * amount * rng.randf_range(-1, 1)
 	offset.y = max_offset.y * amount * rng.randf_range(-1, 1)
 
-func add_shake(amount : float = 0.45):
+func add_shake(amount : float = 0.65):
 	shake_intensity = min(shake_intensity + amount, 1.0)
 	
 
