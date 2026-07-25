@@ -29,5 +29,6 @@ func _next_level() -> void:
 	var next_level_path: String = GameGlobals.LEVELS[GameGlobals.current_level_index]
 	get_tree().change_scene_to_file(next_level_path)
 
-func _retry() -> void:
-	get_tree().change_scene_to_file(GameGlobals.LEVELS.get(0))
+func _go_main_menu() ->void:
+	GameGlobals.alien_motherfuckers.clear()
+	get_tree().change_scene_to_file(GameGlobals.TITLE_SCREEN)
