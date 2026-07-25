@@ -32,7 +32,7 @@ position = Vector2(-23.5, -9.5)
 shape = SubResource("RectangleShape2D_rceta")
 
 [node name="RightWall" type="StaticBody2D" parent="." unique_id=1302062110]
-position = Vector2(902, 0)
+position = Vector2(752, 0)
 
 [node name="RightColl" type="CollisionShape2D" parent="RightWall" unique_id=1074127657]
 position = Vector2(17.375, 314)
