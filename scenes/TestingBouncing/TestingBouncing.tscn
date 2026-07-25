@@ -3,16 +3,16 @@
 [ext_resource type="Script" uid="uid://mmreebo31df7" path="res://scenes/TestingBouncing/testing_bouncing.gd" id="1_by4yl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2awhe"]
-size = Vector2(20, 658)
+size = Vector2(20, 1043)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rceta"]
-size = Vector2(1153, 19)
+size = Vector2(1553, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6lec"]
-size = Vector2(38, 668)
+size = Vector2(38, 1064)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fd5ub"]
-size = Vector2(1153, 32.55002)
+size = Vector2(1561, 32.55002)
 
 [node name="TestingBouncing" type="Node2D" unique_id=633372936]
 script = ExtResource("1_by4yl")
@@ -21,26 +21,26 @@ script = ExtResource("1_by4yl")
 position = Vector2(-10, 0)
 
 [node name="LeftColl" type="CollisionShape2D" parent="LeftWall" unique_id=1324058868]
-position = Vector2(0, 319)
+position = Vector2(0, 511.5)
 shape = SubResource("RectangleShape2D_2awhe")
 
 [node name="AboveWall" type="StaticBody2D" parent="." unique_id=1857485449]
 position = Vector2(600, 0)
 
 [node name="AboveColl" type="CollisionShape2D" parent="AboveWall" unique_id=1787799359]
-position = Vector2(-23.5, -9.5)
+position = Vector2(176.5, -9.5)
 shape = SubResource("RectangleShape2D_rceta")
 
 [node name="RightWall" type="StaticBody2D" parent="." unique_id=1302062110]
-position = Vector2(752, 0)
+position = Vector2(1503, 0)
 
 [node name="RightColl" type="CollisionShape2D" parent="RightWall" unique_id=1074127657]
-position = Vector2(17.375, 314)
+position = Vector2(17.375, 512)
 shape = SubResource("RectangleShape2D_j6lec")
 
 [node name="BelowWall" type="StaticBody2D" parent="." unique_id=269460182]
-position = Vector2(600, 500)
+position = Vector2(600, 1000)
 
 [node name="BelowColl" type="CollisionShape2D" parent="BelowWall" unique_id=2116020024]
-position = Vector2(-23.5, 16.470032)
+position = Vector2(180.5, 16.470032)
 shape = SubResource("RectangleShape2D_fd5ub")

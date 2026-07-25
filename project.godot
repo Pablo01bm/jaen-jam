@@ -23,8 +23,8 @@ GameUtils="*uid://clj6lesil66g7"
 
 [display]
 
-window/size/viewport_width=750
-window/size/viewport_height=500
+window/size/viewport_width=1500
+window/size/viewport_height=1000
 window/stretch/mode="canvas_items"
 
 [input]
