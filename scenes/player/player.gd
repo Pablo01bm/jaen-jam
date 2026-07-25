@@ -11,3 +11,10 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("shoot"):
 		$AfterShoot.start()
+		_shoot()
+
+
+func _shoot() -> void:
+	for body in $Heircross.get_overlapping_bodies():
+		if body is Alien:
+			body.receive_hit()
