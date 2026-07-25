@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dkhfai5amj0mv" path="res://scenes/Alien/Alien.tscn" id="3_j36be"]
 [ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="4_lqic7"]
 [ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="5_2tlph"]
+[ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_j36be"]
 
 [node name="LevelB" type="Node2D" unique_id=1545661808]
 script = ExtResource("1_sjv5f")
@@ -55,3 +56,5 @@ offset_top = -492.0
 offset_right = 56.0
 offset_bottom = -441.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Background" parent="." unique_id=1086620487 instance=ExtResource("7_j36be")]

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b5q66jr5ua80d"]
+
+[ext_resource type="Texture2D" uid="uid://bgjkpggrweiea" path="res://assets/ground.png" id="1_o0w0t"]
+[ext_resource type="Texture2D" uid="uid://bavmhrkw36iug" path="res://assets/stars.png" id="2_db26x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0w0t"]
+size = Vector2(20, 1043)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_db26x"]
+size = Vector2(1553, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71g35"]
+size = Vector2(38, 1064)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bswb3"]
+size = Vector2(1507, 35)
+
+[node name="Background" type="Node2D" unique_id=1086620487]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2063144998]
+texture = ExtResource("1_o0w0t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1537925866]
+texture = ExtResource("2_db26x")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=1867028328]
+position = Vector2(-760, -500)
+collision_layer = 4
+
+[node name="LeftColl" type="CollisionShape2D" parent="LeftWall" unique_id=1685639494]
+position = Vector2(0, 511.5)
+shape = SubResource("RectangleShape2D_o0w0t")
+
+[node name="AboveWall" type="StaticBody2D" parent="." unique_id=1923577625]
+position = Vector2(-150, -500)
+collision_layer = 4
+
+[node name="AboveColl" type="CollisionShape2D" parent="AboveWall" unique_id=1443953716]
+position = Vector2(176.5, -9.5)
+shape = SubResource("RectangleShape2D_db26x")
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=612413593]
+position = Vector2(753, -500)
+collision_layer = 4
+
+[node name="RightColl" type="CollisionShape2D" parent="RightWall" unique_id=404253883]
+position = Vector2(17.375, 512)
+shape = SubResource("RectangleShape2D_71g35")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1804867657]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1277535501]
+position = Vector2(4.5, 387.5)
+shape = SubResource("RectangleShape2D_bswb3")

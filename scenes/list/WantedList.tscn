@@ -3,6 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://mbs8goq1g30n" path="res://scenes/list/list.png" id="1_iw7nr"]
 [ext_resource type="Script" uid="uid://de2bhn4hbmrwh" path="res://scenes/list/wanted_list.gd" id="1_rh1oy"]
 [ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="3_cbkq7"]
+[ext_resource type="Shader" uid="uid://crrjdebmsjf3p" path="res://scenes/list/WantedList.gdshader" id="4_6c201"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pm288"]
+shader = ExtResource("4_6c201")
+shader_parameter/blur_size = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pm288"]
 size = Vector2(726, 870)
@@ -64,6 +69,13 @@ _data = {
 [node name="WantedList" type="Node2D" unique_id=1691400195]
 z_index = 20
 script = ExtResource("1_rh1oy")
+
+[node name="Blur" type="ColorRect" parent="." unique_id=536222063]
+material = SubResource("ShaderMaterial_pm288")
+offset_left = -2035.0
+offset_top = -1573.0
+offset_right = 2044.0
+offset_bottom = 1165.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=110941739]
 position = Vector2(0, 707)
