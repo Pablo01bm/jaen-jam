@@ -12,6 +12,7 @@ const MENUS := [
 ]
  
 const GAME_COMPLETED_SCENE := "res://scenes/game_completed/GameCompleted.tscn"
+const TITLE_SCREEN := "res://scenes/title_screen/TitleScreen.tscn"
  
 var current_level_index: int = 0
 var score: float = 0.0

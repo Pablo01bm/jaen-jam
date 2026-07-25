@@ -10,5 +10,4 @@ func remove_current_scene():
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("rumble"):
-		print("LLEGO")
 		GameUtils.gamepadRumble(1.0, 1)
