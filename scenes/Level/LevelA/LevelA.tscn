@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="5_xjaht"]
 [ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="6_6rpnw"]
 [ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_0rgr4"]
+[ext_resource type="PackedScene" uid="uid://cvhhvyf8nv3lq" path="res://scenes/music_player/MusicPlayer.tscn" id="8_bi7lx"]
 
 [node name="LevelA" type="Node2D" unique_id=1252264966]
 script = ExtResource("1_pth44")
@@ -68,3 +69,5 @@ text = "0.0"
 [node name="FinishTimer" type="Timer" parent="." unique_id=1363170921]
 wait_time = 2.0
 one_shot = true
+
+[node name="MusicPlayer" parent="." unique_id=412988022 instance=ExtResource("8_bi7lx")]

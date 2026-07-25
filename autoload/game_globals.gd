@@ -23,6 +23,9 @@ signal shake_camera
 var alien_motherfuckers: Array[Alien] = []
 signal is_opened 
 signal is_closed
+
+signal level_started
+signal level_finished
  
 func reset() -> void:
 	current_level_index = 0

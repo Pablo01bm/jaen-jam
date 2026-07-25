@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cvhhvyf8nv3lq"]
+
+[ext_resource type="AudioStream" uid="uid://uo0krplyu1ap" path="res://assets/hijoputa-ost/wanted.mp3" id="1_1tquo"]
+[ext_resource type="Script" uid="uid://b25kvi4xpat72" path="res://scenes/music_player/music_player.gd" id="1_r0o87"]
+[ext_resource type="AudioStream" uid="uid://bhyvjv6kf0run" path="res://assets/hijoputa-ost/kill.mp3" id="2_r0o87"]
+[ext_resource type="AudioStream" uid="uid://vg52rxivkaoj" path="res://assets/hijoputa-ost/kill-last.mp3" id="4_vg4wl"]
+
+[node name="MusicPlayer" type="Node" unique_id=412988022]
+script = ExtResource("1_r0o87")
+
+[node name="Wanted" type="AudioStreamPlayer" parent="." unique_id=963246700]
+stream = ExtResource("1_1tquo")
+bus = &"Wanted"
+
+[node name="Kill" type="AudioStreamPlayer" parent="." unique_id=1934675038]
+stream = ExtResource("2_r0o87")
+volume_db = -80.0
+bus = &"Kill"
+
+[node name="Boss" type="AudioStreamPlayer" parent="." unique_id=246190709]
+stream = ExtResource("4_vg4wl")
+bus = &"Boss"
+
+[connection signal="finished" from="Wanted" to="." method="_on_wanted_finished"]
+[connection signal="finished" from="Kill" to="." method="_on_kill_finished"]

@@ -10,3 +10,7 @@ func _ready():
 func _process(delta):
 	if  Input.is_action_just_pressed("shoot"):
 		GameManager._next_level()
+
+
+func _on_results_finished() -> void:
+	$Results.play()

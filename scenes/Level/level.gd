@@ -17,6 +17,7 @@ var started = false
 
 
 func _ready() -> void:
+	GameGlobals.level_started.emit()
 	_collect_aliens()
 	_generate_hijoputas()
 	GameManager.register_level(self)
@@ -97,6 +98,7 @@ func _check_victory() -> void:
 	GameGlobals.score += ($Timer.wait_time - $Timer.time_left)
 	$Timer.paused = true
 	$FinishTimer.start()
+	GameGlobals.level_finished.emit()
 	
 
 func victory():
