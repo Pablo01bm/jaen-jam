@@ -2,10 +2,79 @@
 
 [ext_resource type="Script" uid="uid://620c27ltlug3" path="res://scenes/game.gd" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cml4nuk5k2ym2" path="res://utils/state_machine/state_machine.gd" id="2_yqjtg"]
-[ext_resource type="Script" uid="uid://c4hldrd15s6xe" path="res://scenes/player/states/title_screen.gd" id="3_lnu2h"]
-[ext_resource type="Script" uid="uid://doi6chbqxtugp" path="res://scenes/player/states/gameplay.gd" id="4_lbhrr"]
-[ext_resource type="Script" uid="uid://bwpl2xrg5671q" path="res://scenes/player/states/game_over.gd" id="5_p57ef"]
-[ext_resource type="Script" uid="uid://d4cl0ufkxi7yr" path="res://scenes/player/states/game_completed.gd" id="6_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="3_lnu2h"]
+
+[sub_resource type="GDScript" id="GDScript_yqjtg"]
+script/source = "extends GameState
+
+func _enter(_previous_state_path: String, _init_data := {}):
+	
+	var title_screen = preload(\"res://scenes/title_screen/TitleScreen.tscn\").instantiate()
+	game.add_child(title_screen)
+
+func _update(_delta):
+	if Input.is_action_just_pressed(\"debug_1\"):
+		finished.emit(GAMEPLAY)
+
+func _exit():
+	#game.remove_current_scene()
+	game.get_node(\"TitleScreen\").queue_free()
+"
+
+[sub_resource type="GDScript" id="GDScript_lnu2h"]
+script/source = "extends GameState
+
+func _enter(_previous_state_path: String, _init_data := {}):
+	
+	var gameplay = preload(\"res://scenes/gameplay/Gameplay.tscn\").instantiate()
+	game.add_child(gameplay)
+
+
+func _update(_delta):
+	if Input.is_action_just_pressed(\"debug_1\"):
+		finished.emit(GAME_OVER)
+	if Input.is_action_just_pressed(\"debug_2\"):
+		finished.emit(GAME_COMPLETED)
+
+
+func _exit():
+	game.get_node(\"Gameplay\").queue_free()
+"
+
+[sub_resource type="GDScript" id="GDScript_lbhrr"]
+script/source = "extends GameState
+
+func _enter(_previous_state_path: String, _init_data := {}):
+	
+	var game_over = preload(\"res://scenes/game_over/GameOver.tscn\").instantiate()
+	game.add_child(game_over)
+
+
+func _update(_delta):
+	if Input.is_action_just_pressed(\"debug_1\"):
+		finished.emit(GAMEPLAY)
+	if Input.is_action_just_pressed(\"debug_2\"):
+		finished.emit(TITLE_SCREEN)
+
+
+func _exit():
+	game.get_node(\"GameOver\").queue_free()
+"
+
+[sub_resource type="GDScript" id="GDScript_iywne"]
+script/source = "extends GameState
+
+func _enter(_previous_state_path: String, _init_data := {}):
+	
+	var game_completed = preload(\"res://scenes/game_completed/GameCompleted.tscn\").instantiate()
+	game.add_child(game_completed)
+	get_tree().create_timer(3).timeout.connect(func():
+		finished.emit(TITLE_SCREEN)
+	)
+
+func _exit():
+	game.get_node(\"GameCompleted\").queue_free()
+"
 
 [node name="Game" type="Node2D" unique_id=1608082928]
 script = ExtResource("1_uwrxv")
@@ -14,13 +83,15 @@ script = ExtResource("1_uwrxv")
 script = ExtResource("2_yqjtg")
 
 [node name="TitleScreenState" type="Node" parent="StateMachine" unique_id=1115330959]
-script = ExtResource("3_lnu2h")
+script = SubResource("GDScript_yqjtg")
 
 [node name="GameplayState" type="Node" parent="StateMachine" unique_id=1817602390]
-script = ExtResource("4_lbhrr")
+script = SubResource("GDScript_lnu2h")
 
 [node name="GameOverState" type="Node" parent="StateMachine" unique_id=969052464]
-script = ExtResource("5_p57ef")
+script = SubResource("GDScript_lbhrr")
 
 [node name="GameCompletedState" type="Node" parent="StateMachine" unique_id=1464228282]
-script = ExtResource("6_u5sy4")
+script = SubResource("GDScript_iywne")
+
+[node name="Player" parent="." unique_id=126226238 instance=ExtResource("3_lnu2h")]

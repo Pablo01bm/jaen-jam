@@ -1,6 +1,9 @@
 extends Node2D
 class_name Game
 
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 func remove_current_scene():
 	for scene in get_children():
 		scene.queue_free()
