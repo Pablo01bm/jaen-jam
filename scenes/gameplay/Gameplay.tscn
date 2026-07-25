@@ -1,8 +1,52 @@
 [gd_scene format=3 uid="uid://cwwdgh5o7fgjr"]
 
+[ext_resource type="PackedScene" uid="uid://bovf6uisn75g4" path="res://scenes/TestingBouncing/TestingBouncing.tscn" id="1_hhfdu"]
+[ext_resource type="PackedScene" uid="uid://dkhfai5amj0mv" path="res://scenes/Alien/Alien.tscn" id="2_1l7o1"]
+
 [node name="Gameplay" type="Node2D" unique_id=179578108]
 
 [node name="Label" type="Label" parent="." unique_id=1042699431]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Gameplay"
+
+[node name="TestingBouncing" parent="." unique_id=633372936 instance=ExtResource("1_hhfdu")]
+
+[node name="Alien" parent="TestingBouncing" unique_id=1485095013 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 180)
+
+[node name="Alien2" parent="TestingBouncing" unique_id=1043364454 instance=ExtResource("2_1l7o1")]
+position = Vector2(527, 350)
+
+[node name="Alien3" parent="TestingBouncing" unique_id=655139499 instance=ExtResource("2_1l7o1")]
+position = Vector2(830, 249)
+
+[node name="Alien4" parent="TestingBouncing" unique_id=2131678475 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)
+
+[node name="Alien5" parent="TestingBouncing" unique_id=540333937 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)
+
+[node name="Alien6" parent="TestingBouncing" unique_id=1260693852 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)
+
+[node name="Alien7" parent="TestingBouncing" unique_id=464710389 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)
+
+[node name="Alien8" parent="TestingBouncing" unique_id=509568830 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)
+
+[node name="Alien9" parent="TestingBouncing" unique_id=763163552 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)
+
+[node name="Alien10" parent="TestingBouncing" unique_id=1436063938 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)
+
+[node name="Alien11" parent="TestingBouncing" unique_id=651960408 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)
+
+[node name="Alien12" parent="TestingBouncing" unique_id=1414587208 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)
+
+[node name="Alien13" parent="TestingBouncing" unique_id=2145954485 instance=ExtResource("2_1l7o1")]
+position = Vector2(229, 394)

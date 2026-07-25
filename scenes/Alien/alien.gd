@@ -3,6 +3,8 @@ extends CharacterBody2D
 var SPEED_X = RandomNumberGenerator.new()
 var SPEED_Y = RandomNumberGenerator.new()
 var RANDOM = RandomNumberGenerator.new()
+
+@onready var face = %AlienFace
  
 func _ready():
 	# We define random movement direction
@@ -21,3 +23,9 @@ func _physics_process(delta):
 		print("HOLA")
 		velocity = velocity.bounce(collision.get_normal().rotated(RANDOM.randf_range(-10.0, 10.0)))
 		
+
+func get_info_array():
+	return face.attributes
+
+func reroll_features():
+	face.randomize_face()

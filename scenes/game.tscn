@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://doi6chbqxtugp" path="res://scenes/player/states/gameplay.gd" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://bwpl2xrg5671q" path="res://scenes/player/states/game_over.gd" id="5_p57ef"]
 [ext_resource type="Script" uid="uid://d4cl0ufkxi7yr" path="res://scenes/player/states/game_completed.gd" id="6_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="7_u5sy4"]
 
 [node name="Game" type="Node2D" unique_id=1608082928]
 script = ExtResource("1_uwrxv")
@@ -25,6 +24,3 @@ script = ExtResource("5_p57ef")
 
 [node name="GameCompletedState" type="Node" parent="StateMachine" unique_id=1464228282]
 script = ExtResource("6_u5sy4")
-
-[node name="AlienFace" parent="." unique_id=548084301 instance=ExtResource("7_u5sy4")]
-position = Vector2(508, 292)

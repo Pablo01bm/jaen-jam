@@ -32,14 +32,14 @@ position = Vector2(-23.5, -9.5)
 shape = SubResource("RectangleShape2D_rceta")
 
 [node name="RightWall" type="StaticBody2D" parent="." unique_id=1302062110]
-position = Vector2(1153.625, 0)
+position = Vector2(902, 0)
 
 [node name="RightColl" type="CollisionShape2D" parent="RightWall" unique_id=1074127657]
 position = Vector2(17.375, 314)
 shape = SubResource("RectangleShape2D_j6lec")
 
 [node name="BelowWall" type="StaticBody2D" parent="." unique_id=269460182]
-position = Vector2(600, 647.805)
+position = Vector2(600, 500)
 
 [node name="BelowColl" type="CollisionShape2D" parent="BelowWall" unique_id=2116020024]
 position = Vector2(-23.5, 16.470032)

@@ -3,8 +3,6 @@ class_name AlienFace
 
 @export var attributes = [0, 0, 0, 0, 0, 0]
 @export var attr_range = [5, 5, 6, 5, 4, 4]
-@onready var features = [$Head, $Eyebrows, $Eyes,
-$Nose, $Mouth, $Top]
 
 func _ready() -> void:
 	randomize_face()
