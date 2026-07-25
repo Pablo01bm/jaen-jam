@@ -11,3 +11,10 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("shoot"):
 		$AfterShoot.start()
+		debug_draw_explosion()
+
+
+func debug_draw_explosion():
+	var explosion = preload("res://scenes/ovni_particles/OvniParticle.tscn").instantiate()
+	explosion.global_position = $Heircross.global_position
+	get_parent().add_child(explosion)

@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://b633vkva6kney"]
+
+[ext_resource type="Texture2D" uid="uid://dfvylde60yyt" path="res://scenes/ovni_particles/ovni-part1.png" id="1_fe74y"]
+[ext_resource type="Script" uid="uid://bmi0nb02q0jsj" path="res://scenes/ovni_particles/ovni_particle.gd" id="1_ojvks"]
+[ext_resource type="Texture2D" uid="uid://go8r18qevjcf" path="res://scenes/ovni_particles/ovni-part6.png" id="2_ojvks"]
+[ext_resource type="Texture2D" uid="uid://ca2r0s5c6dtwp" path="res://scenes/ovni_particles/ovni-part2.png" id="3_eg6ck"]
+[ext_resource type="Texture2D" uid="uid://cxmssfvojjq3p" path="res://scenes/ovni_particles/ovni-part4.png" id="4_rrrjj"]
+[ext_resource type="Texture2D" uid="uid://cobw6j70e727v" path="res://scenes/ovni_particles/ovni-part5.png" id="5_6myqk"]
+[ext_resource type="Texture2D" uid="uid://cqbkf607d25kg" path="res://scenes/ovni_particles/ovni-part3.png" id="6_1fmpo"]
+[ext_resource type="Texture2D" uid="uid://csgmexh1k4pmq" path="res://scenes/ovni_particles/explosion.png" id="7_t3l62"]
+
+[sub_resource type="Gradient" id="Gradient_pm288"]
+offsets = PackedFloat32Array(0.07597173, 0.59893996, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i47ky"]
+atlas = ExtResource("7_t3l62")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liixo"]
+atlas = ExtResource("7_t3l62")
+region = Rect2(160, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbq0v"]
+atlas = ExtResource("7_t3l62")
+region = Rect2(320, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6ifb"]
+atlas = ExtResource("7_t3l62")
+region = Rect2(0, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shr50"]
+atlas = ExtResource("7_t3l62")
+region = Rect2(160, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbxyr"]
+atlas = ExtResource("7_t3l62")
+region = Rect2(320, 320, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pm288"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i47ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liixo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbq0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6ifb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shr50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbxyr")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="OvniParticle" type="Node2D" unique_id=2094759601]
+script = ExtResource("1_ojvks")
+
+[node name="BodyCenter" type="CPUParticles2D" parent="." unique_id=1487857111]
+position = Vector2(0, 1)
+emitting = false
+amount = 1
+texture = ExtResource("1_fe74y")
+lifetime = 2.0
+one_shot = true
+direction = Vector2(0, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_pm288")
+
+[node name="BodyRight" type="CPUParticles2D" parent="." unique_id=1001442574]
+position = Vector2(53, -2)
+emitting = false
+amount = 1
+texture = ExtResource("2_ojvks")
+lifetime = 2.0
+one_shot = true
+direction = Vector2(1, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_pm288")
+
+[node name="BodyLeft" type="CPUParticles2D" parent="." unique_id=441098269]
+position = Vector2(-47, 0)
+emitting = false
+amount = 1
+texture = ExtResource("3_eg6ck")
+lifetime = 2.0
+one_shot = true
+direction = Vector2(-1, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_pm288")
+
+[node name="CristalBig" type="CPUParticles2D" parent="." unique_id=1944729838]
+position = Vector2(-6, -30)
+emitting = false
+amount = 1
+texture = ExtResource("4_rrrjj")
+lifetime = 2.0
+one_shot = true
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_pm288")
+
+[node name="CristalRight" type="CPUParticles2D" parent="." unique_id=562963528]
+position = Vector2(22, -66)
+emitting = false
+amount = 1
+texture = ExtResource("5_6myqk")
+lifetime = 2.0
+one_shot = true
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_pm288")
+
+[node name="CristalLeft" type="CPUParticles2D" parent="." unique_id=1709615754]
+position = Vector2(-30, -76)
+emitting = false
+amount = 1
+texture = ExtResource("6_1fmpo")
+lifetime = 2.0
+one_shot = true
+direction = Vector2(-1, 0)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_pm288")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=210278195]
+position = Vector2(-4, -36)
+scale = Vector2(1.3591447, 1.3591447)
+sprite_frames = SubResource("SpriteFrames_pm288")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[connection signal="finished" from="BodyCenter" to="." method="_on_body_center_finished"]
