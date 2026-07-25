@@ -1,10 +1,17 @@
-[gd_scene format=3 uid="uid://cdalhwxrd4yyq"]
+[gd_scene format=3 uid="uid://djwh6m25juddv"]
 
-[ext_resource type="Script" uid="uid://bvxmcbw5g0yb2" path="res://scenes/player/player.gd" id="1_wr5hl"]
-[ext_resource type="Script" uid="uid://cml4nuk5k2ym2" path="res://utils/state_machine/state_machine.gd" id="2_gfjak"]
+[ext_resource type="Script" uid="uid://b61v1l040aqb5" path="res://scenes/player/player.gd" id="1_gfjak"]
+[ext_resource type="Texture2D" uid="uid://in4oglso3dn8" path="res://scenes/player/heircross.png" id="1_wr5hl"]
 
-[node name="Player" type="CharacterBody2D" unique_id=2078430885]
-script = ExtResource("1_wr5hl")
+[node name="Player" type="Node2D" unique_id=126226238]
+z_index = 10
+script = ExtResource("1_gfjak")
 
-[node name="StateMachine" type="Node" parent="." unique_id=2056001486]
-script = ExtResource("2_gfjak")
+[node name="Heircross" type="Area2D" parent="." unique_id=1278668603]
+
+[node name="Sprite2D" type="Sprite2D" parent="Heircross" unique_id=548877180]
+texture = ExtResource("1_wr5hl")
+
+[node name="AfterShoot" type="Timer" parent="." unique_id=1624877960]
+wait_time = 0.75
+one_shot = true

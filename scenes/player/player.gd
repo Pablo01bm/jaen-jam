@@ -1,6 +1,13 @@
-extends CharacterBody2D
-class_name Player
+extends Node2D
 
-@onready var state_machine: StateMachine = (func get_state_machine() -> StateMachine:
-	return get_node("StateMachine")
-).call()
+func _process(delta: float) -> void:
+	var mouse_position = get_global_mouse_position()
+	$Heircross.global_position = mouse_position
+	
+	if $AfterShoot.time_left == 0:
+		$Heircross.rotate(delta)
+	else:
+		$Heircross.rotate(delta * $AfterShoot.time_left * 18)
+
+	if Input.is_action_just_pressed("shoot"):
+		$AfterShoot.start()
