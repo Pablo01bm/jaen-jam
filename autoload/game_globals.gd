@@ -15,6 +15,8 @@ var score: int = 0
 
 signal shake_camera
  
+var alien_motherfuckers: Array[Alien] = []
+
  
 func reset() -> void:
 	current_level_index = 0

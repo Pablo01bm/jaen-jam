@@ -9,7 +9,6 @@
 
 [node name="LevelA" type="Node2D" unique_id=1252264966]
 script = ExtResource("1_pth44")
-velocidad = null
 
 [node name="TestingBouncing" parent="." unique_id=633372936 instance=ExtResource("2_ceoao")]
 position = Vector2(-750, -500)
@@ -22,31 +21,24 @@ position = Vector2(-750, -500)
 
 [node name="Alien" parent="Aliens" unique_id=1485095013 instance=ExtResource("3_xjaht")]
 position = Vector2(1034, 528)
-is_hijoputa = true
 
 [node name="Alien2" parent="Aliens" unique_id=2002073948 instance=ExtResource("3_xjaht")]
 position = Vector2(326, 221)
-is_hijoputa = true
 
 [node name="Alien3" parent="Aliens" unique_id=905469524 instance=ExtResource("3_xjaht")]
 position = Vector2(830, 249)
-is_hijoputa = true
 
 [node name="Alien4" parent="Aliens" unique_id=545454846 instance=ExtResource("3_xjaht")]
 position = Vector2(205, 499)
-is_hijoputa = true
 
 [node name="Alien5" parent="Aliens" unique_id=806084223 instance=ExtResource("3_xjaht")]
 position = Vector2(1334, 718)
-is_hijoputa = true
 
 [node name="Alien6" parent="Aliens" unique_id=552445047 instance=ExtResource("3_xjaht")]
 position = Vector2(475, 371)
-is_hijoputa = true
 
 [node name="Alien7" parent="Aliens" unique_id=1918898411 instance=ExtResource("3_xjaht")]
 position = Vector2(150, 120)
-is_hijoputa = true
 
 [node name="Alien8" parent="Aliens" unique_id=2004046912 instance=ExtResource("3_xjaht")]
 position = Vector2(590, 175)

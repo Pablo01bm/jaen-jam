@@ -15,12 +15,16 @@ func randomize_face():
 	attributes[4] = randf_range(0, attr_range.get(4))
 	attributes[5] = randf_range(0, attr_range.get(5))
 	
+	update_face(attributes)
+
+func update_face(attributes: Array) -> void:
 	$Head.frame = attributes.get(0)
 	$Eyebrows.frame = attributes.get(1)
 	$Eyes.frame = attributes.get(2)
 	$Nose.frame = attributes.get(3)
 	$Mouth.frame = attributes.get(4)
 	$Top.frame = attributes.get(5)
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("rumble"):
