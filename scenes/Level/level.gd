@@ -13,6 +13,8 @@ const MAX_REROLL_TRIES := 30
 var m_aliens: Array[Alien] = []
 var m_hijoputas: Array[Alien] = []
 
+var started = false
+
 
 func _ready() -> void:
 	_collect_aliens()
@@ -21,9 +23,12 @@ func _ready() -> void:
 	_assign_z_index()
 	GameGlobals.is_closed.connect(_start_timer)
 	$Timer.timeout.connect(_game_over)
+	$TimeLeft.text = str($Timer.wait_time)
+	GameGlobals.is_closed.connect(func(): started = true)
 
 func _process(delta):
-	$TimeLeft.text = str($Timer.time_left)
+	if started:
+		$TimeLeft.text = str($Timer.time_left)
 
 func _collect_aliens() -> void:
 	m_aliens.clear()

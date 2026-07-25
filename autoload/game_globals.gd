@@ -4,6 +4,7 @@ extends Node
 const LEVELS := [
 	"res://scenes/Level/LevelA/LevelA.tscn",
 	"res://scenes/Level/LevelB/LevelB.tscn",
+	"res://scenes/Level/LevelC/LevelC.tscn"
 ]
 
 const MENUS := [

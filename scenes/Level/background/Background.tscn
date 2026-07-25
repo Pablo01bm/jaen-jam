@@ -16,6 +16,7 @@ size = Vector2(38, 1064)
 size = Vector2(1507, 35)
 
 [node name="Background" type="Node2D" unique_id=1086620487]
+z_index = -3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2063144998]
 texture = ExtResource("1_o0w0t")

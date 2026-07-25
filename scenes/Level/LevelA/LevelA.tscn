@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="5_xjaht"]
 [ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="6_6rpnw"]
 [ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_0rgr4"]
-[ext_resource type="PackedScene" uid="uid://cltva7cb4r015" path="res://scenes/hazards/Asteroid.tscn" id="8_bi7lx"]
 
 [node name="LevelA" type="Node2D" unique_id=1252264966]
 script = ExtResource("1_pth44")
@@ -33,32 +32,17 @@ position = Vector2(830, 249)
 [node name="Alien4" parent="Aliens" unique_id=545454846 instance=ExtResource("3_xjaht")]
 position = Vector2(205, 499)
 
-[node name="Alien5" parent="Aliens" unique_id=806084223 instance=ExtResource("3_xjaht")]
-position = Vector2(1334, 718)
+[node name="Alien5" parent="Aliens" unique_id=629474834 instance=ExtResource("3_xjaht")]
+position = Vector2(635, 675)
 
-[node name="Alien6" parent="Aliens" unique_id=552445047 instance=ExtResource("3_xjaht")]
-position = Vector2(475, 371)
+[node name="Alien6" parent="Aliens" unique_id=313233863 instance=ExtResource("3_xjaht")]
+position = Vector2(560, 448)
 
-[node name="Alien7" parent="Aliens" unique_id=1918898411 instance=ExtResource("3_xjaht")]
-position = Vector2(150, 120)
+[node name="Alien7" parent="Aliens" unique_id=1690149511 instance=ExtResource("3_xjaht")]
+position = Vector2(1139, 322)
 
-[node name="Alien8" parent="Aliens" unique_id=2004046912 instance=ExtResource("3_xjaht")]
-position = Vector2(590, 175)
-
-[node name="Alien9" parent="Aliens" unique_id=2147357109 instance=ExtResource("3_xjaht")]
-position = Vector2(992, 739)
-
-[node name="Alien10" parent="Aliens" unique_id=1156260577 instance=ExtResource("3_xjaht")]
-position = Vector2(264, 772)
-
-[node name="Alien11" parent="Aliens" unique_id=1766448357 instance=ExtResource("3_xjaht")]
-position = Vector2(648, 545)
-
-[node name="Alien12" parent="Aliens" unique_id=139766061 instance=ExtResource("3_xjaht")]
-position = Vector2(1161, 280)
-
-[node name="Alien13" parent="Aliens" unique_id=1799475700 instance=ExtResource("3_xjaht")]
-position = Vector2(509, 740)
+[node name="Alien8" parent="Aliens" unique_id=709406241 instance=ExtResource("3_xjaht")]
+position = Vector2(1325, 650)
 
 [node name="WantedList" parent="." unique_id=1691400195 instance=ExtResource("5_xjaht")]
 position = Vector2(17, -4)
@@ -66,16 +50,17 @@ position = Vector2(17, -4)
 [node name="Camera" parent="." unique_id=1566412125 instance=ExtResource("6_6rpnw")]
 
 [node name="Timer" type="Timer" parent="." unique_id=306255501]
-wait_time = 29.247
+wait_time = 7.0
 one_shot = true
 
 [node name="TimeLeft" type="Label" parent="." unique_id=2075339793]
+z_index = 70
 offset_left = -57.0
 offset_top = -492.0
 offset_right = 56.0
 offset_bottom = -441.0
+scale = Vector2(4.285952, 4.285952)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.0"
 
 [node name="Background" parent="." unique_id=1086620487 instance=ExtResource("7_0rgr4")]
-
-[node name="Asteroid" parent="Background" unique_id=650426495 instance=ExtResource("8_bi7lx")]

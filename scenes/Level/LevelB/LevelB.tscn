@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="4_lqic7"]
 [ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="5_2tlph"]
 [ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_j36be"]
+[ext_resource type="PackedScene" uid="uid://cltva7cb4r015" path="res://scenes/hazards/Asteroid.tscn" id="8_lqic7"]
 
 [node name="LevelB" type="Node2D" unique_id=1545661808]
 script = ExtResource("1_sjv5f")
+HIJOPUTA_COUNT = 2
 
 [node name="TestingBouncing" parent="." unique_id=633372936 instance=ExtResource("1_q4l64")]
 position = Vector2(-750, -500)
@@ -35,11 +37,11 @@ position = Vector2(205, 499)
 [node name="Alien5" parent="Aliens" unique_id=1384696507 instance=ExtResource("3_j36be")]
 position = Vector2(1334, 718)
 
-[node name="Alien6" parent="Aliens" unique_id=2044841206 instance=ExtResource("3_j36be")]
-position = Vector2(475, 371)
+[node name="Alien6" parent="Aliens" unique_id=493844380 instance=ExtResource("3_j36be")]
+position = Vector2(1328, 263)
 
-[node name="Alien7" parent="Aliens" unique_id=159166642 instance=ExtResource("3_j36be")]
-position = Vector2(150, 120)
+[node name="Alien7" parent="Aliens" unique_id=904030665 instance=ExtResource("3_j36be")]
+position = Vector2(369, 672)
 
 [node name="WantedList" parent="." unique_id=1691400195 instance=ExtResource("4_lqic7")]
 position = Vector2(17, -4)
@@ -47,14 +49,19 @@ position = Vector2(17, -4)
 [node name="Camera" parent="." unique_id=1566412125 instance=ExtResource("5_2tlph")]
 
 [node name="Timer" type="Timer" parent="." unique_id=1023940870]
-wait_time = 29.247
+wait_time = 12.0
 one_shot = true
 
-[node name="TimeLeft" type="Label" parent="." unique_id=1121729152]
+[node name="Background" parent="." unique_id=1086620487 instance=ExtResource("7_j36be")]
+
+[node name="TimeLeft" type="Label" parent="." unique_id=1012525937]
+z_index = 70
 offset_left = -57.0
 offset_top = -492.0
 offset_right = 56.0
 offset_bottom = -441.0
+scale = Vector2(4.285952, 4.285952)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.0"
 
-[node name="Background" parent="." unique_id=1086620487 instance=ExtResource("7_j36be")]
+[node name="Asteroid" parent="." unique_id=602204702 instance=ExtResource("8_lqic7")]
