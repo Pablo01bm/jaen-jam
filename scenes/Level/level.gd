@@ -25,10 +25,11 @@ func _ready() -> void:
 	$Timer.timeout.connect(_game_over)
 	$TimeLeft.text = str($Timer.wait_time)
 	GameGlobals.is_closed.connect(func(): started = true)
+	$FinishTimer.timeout.connect(victory)
 
 func _process(delta):
 	if started:
-		$TimeLeft.text = str($Timer.time_left)
+		$TimeLeft.text = str(snapped($Timer.time_left, 0.1))
 
 func _collect_aliens() -> void:
 	m_aliens.clear()
@@ -93,10 +94,14 @@ func _on_alien_died(alien: Alien) -> void:
 
 
 func _check_victory() -> void:
-	level_completed.emit()
 	GameGlobals.score += ($Timer.wait_time - $Timer.time_left)
-	$Timer.stop()
+	$Timer.paused = true
+	$FinishTimer.start()
 	
+
+func victory():
+	level_completed.emit()
+
 
 func _game_over() -> void:
 	$Timer.stop()

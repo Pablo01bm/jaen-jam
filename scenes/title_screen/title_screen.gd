@@ -8,6 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("shoot"):
-		print("RESTART")
-		GameManager._go_main_menu()
+	if  Input.is_action_just_pressed("shoot"):
+		GameManager.start_game()

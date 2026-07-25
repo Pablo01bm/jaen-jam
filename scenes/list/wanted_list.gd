@@ -31,10 +31,10 @@ func move_up():
 		tween.stop()
 		tween.kill()
 	tween = get_tree().create_tween()
-	tween.tween_method(set_shader_value, Vector2.ZERO, blur, 0.2)
-	tween.tween_property($Sprite2D, "position", Vector2(0.0, 4.0), 0.4)
+	tween.parallel().tween_property($Sprite2D, "position", Vector2(0.0, 4.0), 0.4)
+	tween.parallel().tween_method(set_shader_value, Vector2.ZERO, blur, 0.2)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_BOUNCE)
+	#tween.set_trans(Tween.TRANS_CUBIC)
 	tween.play()
 	
 
@@ -44,10 +44,10 @@ func move_down():
 		tween.stop()
 		tween.kill()
 	tween = get_tree().create_tween()
-	tween.tween_method(set_shader_value, blur, Vector2.ZERO, 0.2)
-	tween.tween_property($Sprite2D, "position", Vector2(0.0, 707.0), 0.4)
+	tween.parallel().tween_property($Sprite2D, "position", Vector2(0.0, 707.0), 0.4)
+	tween.parallel().tween_method(set_shader_value, blur, Vector2.ZERO, 0.2)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_BOUNCE)
+	#tween.set_trans(Tween.TRANS_CUBIC)
 	tween.play()
 
 

@@ -64,3 +64,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0.0"
 
 [node name="Background" parent="." unique_id=1086620487 instance=ExtResource("7_0rgr4")]
+
+[node name="FinishTimer" type="Timer" parent="." unique_id=1363170921]
+wait_time = 2.0
+one_shot = true

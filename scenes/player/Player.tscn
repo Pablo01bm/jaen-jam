@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b61v1l040aqb5" path="res://scenes/player/player.gd" id="1_gfjak"]
 [ext_resource type="Texture2D" uid="uid://in4oglso3dn8" path="res://scenes/player/heircross.png" id="1_wr5hl"]
+[ext_resource type="Texture2D" uid="uid://f75s7aisqqma" path="res://scenes/player/heircross2.png" id="2_524rm"]
 [ext_resource type="Texture2D" uid="uid://dhtpkgd0cxpb8" path="res://scenes/player/pointer.png" id="3_4kuee"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mw1b"]
@@ -22,6 +23,18 @@ texture = ExtResource("1_wr5hl")
 scale = Vector2(1.795, 1.795)
 shape = SubResource("CircleShape2D_2mw1b")
 
+[node name="HeircrossFail" type="Area2D" parent="." unique_id=360598897]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HeircrossFail" unique_id=86594059]
+texture = ExtResource("2_524rm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeircrossFail" unique_id=1366773149]
+scale = Vector2(1.795, 1.795)
+shape = SubResource("CircleShape2D_2mw1b")
+
 [node name="AfterShoot" type="Timer" parent="." unique_id=1624877960]
 wait_time = 0.75
 one_shot = true
@@ -36,3 +49,10 @@ texture = ExtResource("3_4kuee")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pointer" unique_id=1757033014]
 scale = Vector2(1.795, 1.795)
 shape = SubResource("CircleShape2D_2mw1b")
+
+[node name="Failed" type="Timer" parent="." unique_id=1218438633]
+one_shot = true
+
+[node name="InnocentKilled" type="Timer" parent="." unique_id=721913364]
+wait_time = 3.0
+one_shot = true
