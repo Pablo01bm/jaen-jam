@@ -11,7 +11,6 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("shoot"):
 		$AfterShoot.start()
-		debug_draw_explosion()
 
 
 func debug_draw_explosion():
