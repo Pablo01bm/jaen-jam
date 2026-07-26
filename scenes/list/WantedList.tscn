@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://de2bhn4hbmrwh" path="res://scenes/list/wanted_list.gd" id="1_rh1oy"]
 [ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="3_cbkq7"]
 [ext_resource type="Shader" uid="uid://crrjdebmsjf3p" path="res://scenes/list/WantedList.gdshader" id="4_6c201"]
+[ext_resource type="AudioStream" uid="uid://deeky1stx5yc0" path="res://assets/hijoputa-sounds/reload.wav" id="5_ctnue"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pm288"]
 shader = ExtResource("4_6c201")
@@ -152,6 +153,10 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse" unique_id=916753377]
 shape = SubResource("CircleShape2D_pm288")
+
+[node name="Reload" type="AudioStreamPlayer" parent="." unique_id=1377318016]
+stream = ExtResource("5_ctnue")
+volume_db = 10.0
 
 [connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_exited"]

@@ -6,6 +6,8 @@ extends Node2D
 %AlienFace2,
 %AlienFace3]
 
+var reloaded = false
+
 var blur = Vector2(4.0, 4.0)
 
 func _ready() -> void:
@@ -26,6 +28,10 @@ func _on_area_2d_mouse_exited() -> void:
 
 func move_up():
 	GameGlobals.is_opened.emit()
+	
+	if !reloaded:
+		reloaded = true
+		$Reload.play()
 	
 	if tween != null:
 		tween.stop()

@@ -13,13 +13,15 @@ func _ready() -> void:
 
 
 func kill():
-	if tween != null:
-		tween.kill()
-	tween = get_tree().create_tween()
-	tween.parallel().tween_property($Kill, "volume_db", 0.0, 0.2)
-	tween.parallel().tween_property($Wanted, "volume_db", -80.0, 0.5)
-	tween.play()
-	$Kill.play()
+	if killing == false:
+		killing = true
+		if tween != null:
+			tween.kill()
+		tween = get_tree().create_tween()
+		tween.parallel().tween_property($Kill, "volume_db", 0.0, 0.2)
+		tween.parallel().tween_property($Wanted, "volume_db", -80.0, 0.5)
+		tween.play()
+		$Kill.play()
 
 func level_finished():
 	if tween != null:

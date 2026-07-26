@@ -11,22 +11,24 @@ func _ready():
 
 func _process(delta: float) -> void:
 	
+	var mouse_position = get_global_mouse_position()
+	
 	if failed_shot || innocent_killed:
 		_process_cooldown()
-		var mouse_position = get_global_mouse_position()
 		$HeircrossFail.global_position = mouse_position
 		_rotate_heircross(delta, $HeircrossFail)
 	
 	if (is_shooting == true):
-		var mouse_position = get_global_mouse_position()
 		$Heircross.global_position = mouse_position
 		
 		_rotate_heircross(delta,$Heircross )
 		if Input.is_action_just_pressed("shoot"):
 			_shoot()
 	else:
-		var mouse_position = get_global_mouse_position()
 		$Pointer.global_position = mouse_position
+	
+	$HeircrossFail.global_position = mouse_position
+	$HeircrossFail.global_position = mouse_position
 
 func _rotate_heircross(delta, heircross) -> void:
 	if $AfterShoot.time_left == 0:
@@ -41,8 +43,11 @@ func debug_draw_explosion():
 
 
 func _shoot() -> void:
+	if failed_shot or innocent_killed: 
+		$AnimationPlayer.play("error")
 	if shoot_ready:
 		$AfterShoot.start()
+		$Shoot.play()
 		var aux = -1;
 		var aux_body
 		if $Heircross.get_overlapping_bodies().size() > 0:
@@ -56,6 +61,12 @@ func _shoot() -> void:
 							if !body.is_hijoputa:
 								## YOU KILLED AN INNOCENT ALIEN WITTH A LOVING FAMILY AND A COSMIC DOG.....
 								_innocent_killed_process()
+								$AnimationPlayer.play("error")
+								$GoodHit.play()
+							else:
+								$WantedHit.play()
+								$WantedHit2.play()
+								$AnimationPlayer.play("hit")
 						if body is Hazard:
 							_innocent_killed_process()
 				if aux_body != null:
@@ -75,16 +86,19 @@ func _enable_shooting() -> void:
 	shoot_ready = true
 
 func _process_cooldown() -> void:
+	$Heircross.visible = false
 	if failed_shot:
 		if $Failed.time_left == 0.0:
 			failed_shot = false;
 			$HeircrossFail.visible = false
+			$Heircross.visible = true
 			shoot_ready = true
 		
 	elif innocent_killed:
 		if $InnocentKilled.time_left == 0.0:
 			innocent_killed = false
 			$HeircrossFail.visible = false
+			$Heircross.visible = true
 			shoot_ready = true
 
 func _shoot_failed_process() -> void:
