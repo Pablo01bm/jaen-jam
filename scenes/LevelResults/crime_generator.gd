@@ -64,10 +64,10 @@ static func _generate_name(lang: String = "es") -> String:
 	return name
 
 
-static func generate_crime(lang: String = "es") -> String:
+static func generate_crime(lang: String = "es", index: int = 0) -> String:
 	var data: Dictionary = CRIMES.get(lang, CRIMES["es"])
  
-	var name: String = data["names"].pick_random()
+	var name: String = GameGlobals.alien_motherfuckers_names.get(index)
 	var action: Dictionary = data["actions"].pick_random()
 	var object: Dictionary = data["objects"].pick_random()
  

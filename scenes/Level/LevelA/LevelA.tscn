@@ -131,7 +131,6 @@ one_shot = true
 position = Vector2(-755, -503)
 
 [node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("10_hsgin")]
-visible = false
 position = Vector2(-751, -520)
 
 [node name="TimeLeft" type="Label" parent="." unique_id=1262137224]

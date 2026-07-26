@@ -15,7 +15,10 @@ const ALIEN_FACE_SCENE := preload("res://scenes/alien_face/AlienFace.tscn")
 func _ready() -> void:
 	_fill_soab_aliens_faces()
 	GameGlobals.score = snapped(GameGlobals.score, 0.1)
-	$Time.text = str(GameGlobals.score)
+	$Time.text = str(GameGlobals.score) + "s"
+	$Player._prepare_mouse()
+	$Player._enable_shooting()
+	$Curtain.curtain_up()
 
 
 func _fill_soab_aliens_faces() -> void:
@@ -24,7 +27,7 @@ func _fill_soab_aliens_faces() -> void:
 	for i in range(defeated.size()):
 		$Aliens.get_child(i).update_face(defeated[i])
 		$Aliens.get_child(i).visible = true
-		$Aliens.get_child(i).get_child(7).text = CrimeGenerator.generate_crime(lang)
+		$Aliens.get_child(i).get_child(7).text = CrimeGenerator.generate_crime(lang, i)
 	
 	GameGlobals.alien_motherfuckers_faces.clear()
 
@@ -32,8 +35,13 @@ func _fill_soab_aliens_faces() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
-		GameManager._next_level()
+		$Timer.start()
+		$Curtain.curtain_down()
 
 
 func _on_results_finished() -> void:
 	$Results.play()
+
+
+func _on_timer_timeout() -> void:
+	GameManager._next_level()
