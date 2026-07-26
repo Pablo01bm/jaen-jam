@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chtv5ry6pkf2p"]
 
 [ext_resource type="Script" uid="uid://5utkgn58eenj" path="res://scenes/LevelResults/level_results.gd" id="1_j40pc"]
-[ext_resource type="AudioStream" uid="uid://dc5iua2wqahde" path="res://assets/hijoputa-ost/results.mp3" id="2_01nrt"]
+[ext_resource type="AudioStream" uid="uid://c66nvb6nws76r" path="res://assets/hijoputa-ost/results.ogg" id="2_01nrt"]
 
 [node name="LevelResults" type="Node2D" unique_id=2020368190]
 script = ExtResource("1_j40pc")
