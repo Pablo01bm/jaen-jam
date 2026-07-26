@@ -43,6 +43,9 @@ func _ready() -> void:
 		print("load record")
 		print(hs.score)
 		high_score = hs.score
+	else: 
+		hs = HighScore.new()
+		ResourceSaver.save(hs,"user://high-score.tres")
 
 
 func save_record(face: AlienFace):
@@ -56,6 +59,7 @@ func save_record(face: AlienFace):
 
 func get_high_score_face():
 	var hs: HighScore = ResourceLoader.load("user://high-score.tres", "", ResourceLoader.CACHE_MODE_IGNORE)
+	if hs
 	return hs.face
 
 func reset() -> void:
