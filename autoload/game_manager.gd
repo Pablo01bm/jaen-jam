@@ -21,11 +21,13 @@ func _on_level_completed() -> void:
 
 
 func game_over() -> void:
+	GameGlobals.alien_motherfuckers_names.clear()
 	get_tree().change_scene_to_file(GameGlobals.MENUS.get(0))
 	
 
 func _next_level() -> void:
 	GameGlobals.alien_motherfuckers.clear()
+	GameGlobals.alien_motherfuckers_names.clear()
 	var next_level_path: String = GameGlobals.LEVELS[GameGlobals.current_level_index]
 	get_tree().change_scene_to_file(next_level_path)
 
