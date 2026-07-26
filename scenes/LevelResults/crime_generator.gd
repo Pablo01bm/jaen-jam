@@ -58,6 +58,12 @@ const CRIMES := {
 	},
 }
 
+static func _generate_name(lang: String = "es") -> String:
+	var data: Dictionary = CRIMES.get(lang, CRIMES["es"])
+	var name: String = data["names"].pick_random()
+	return name
+
+
 static func generate_crime(lang: String = "es") -> String:
 	var data: Dictionary = CRIMES.get(lang, CRIMES["es"])
  

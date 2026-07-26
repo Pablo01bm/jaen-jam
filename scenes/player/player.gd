@@ -72,11 +72,12 @@ func _shoot() -> void:
 								$WantedHit2.play()
 								$AnimationPlayer.play("hit")
 						if body is Hazard:
-							_innocent_killed_process()
-				if aux_body != null:
-					aux_body.receive_hit()
-					if aux_body is Alien:
-						GameGlobals.shake_camera.emit()
+							_shoot_failed_process()
+						if aux_body != null:
+							aux_body.receive_hit()
+							if aux_body is Alien:
+								GameGlobals.shake_camera.emit()
+							
 		else:
 			## FAILED SHOT
 			_shoot_failed_process()
