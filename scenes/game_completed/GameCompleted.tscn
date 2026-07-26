@@ -21,45 +21,46 @@ text = "GAME COMPLETED!!"
 horizontal_alignment = 1
 
 [node name="Score" type="Label" parent="." unique_id=757037667]
-offset_left = 268.99994
+offset_left = 416.0
 offset_top = 782.0
-offset_right = 1201.895
+offset_right = 1348.895
 offset_bottom = 950.0
 scale = Vector2(0.72, 0.72)
 theme = ExtResource("2_rbax3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
-text = "10:00"
+text = "10.0"
 
 [node name="Score2" type="Label" parent="." unique_id=125757538]
-offset_left = -179.99997
+offset_left = -91.99999
 offset_top = 782.0
-offset_right = 752.895
+offset_right = 840.895
 offset_bottom = 950.0
 scale = Vector2(0.72, 0.72)
 theme = ExtResource("2_rbax3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
-text = "TIME:"
+text = "YOUR TIME:"
 horizontal_alignment = 1
 
 [node name="HighScore" type="Label" parent="." unique_id=1446905333]
-offset_left = 580.0
-offset_top = 892.0
-offset_right = 1512.895
-offset_bottom = 1060.0
-scale = Vector2(0.72, 0.72)
+offset_left = 623.0
+offset_top = 831.1431
+offset_right = 1555.895
+offset_bottom = 999.1431
+rotation = -0.004114242
+scale = Vector2(1.0794544, 1.0794544)
 theme = ExtResource("2_rbax3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
-text = "10:00"
+text = "10.0"
 
 [node name="HighScore2" type="Label" parent="." unique_id=1158846930]
-offset_left = -25.0
-offset_top = 892.0
-offset_right = 907.895
-offset_bottom = 1060.0
-scale = Vector2(0.72, 0.72)
+offset_left = -157.0
+offset_top = 831.1431
+offset_right = 775.895
+offset_bottom = 999.1431
+scale = Vector2(1.0794545, 1.0794545)
 theme = ExtResource("2_rbax3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
@@ -112,7 +113,7 @@ position = Vector2(741, 377)
 scale = Vector2(3.815, 3.815)
 
 [node name="AlienFace2" parent="." unique_id=430993818 instance=ExtResource("4_qqrwy")]
-position = Vector2(884, 908)
+position = Vector2(910, 894)
 scale = Vector2(1.99, 1.99)
 
 [node name="Timer" type="Timer" parent="." unique_id=2062575815]
