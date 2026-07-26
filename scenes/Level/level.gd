@@ -88,7 +88,8 @@ func _face_collides(alien: Alien) -> bool:
 func _on_alien_died(alien: Alien) -> void:
 	if not alien.is_hijoputa:
 		return
-
+	GameGlobals.alien_motherfuckers_faces.append(alien.get_face_signature())
+	
 	m_hijoputas.erase(alien)
 	if m_hijoputas.is_empty():
 		_check_victory()
