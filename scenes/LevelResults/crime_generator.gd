@@ -3,7 +3,7 @@ class_name CrimeGenerator
 
 const CRIMES := {
 	"es": {
-		"names": ["Manolo", "Ragoy", "Elsapato", "Pene Penez", "Mariuzz Bross", "Weón"],
+		"names": ["Manolo", "Ragoy", "Elsapato", "Pene Penez", "Mariuzz Bross", "Weón", "Marciano Rajoy", "Lambdas", "Diganmas", "Xokulon", "Kang", "Kodos", "E.T.", "Goku", "Glorbo", "Citripio", "Gluppo", "Jabba", "Nappa", "Mr. Penis", "Pavro", "Pablo Matón", "Pepe"],
 		"actions": [
 			{"text": "robó"},
 			{"text": "secuestró"},
@@ -12,7 +12,12 @@ const CRIMES := {
 			{"text": "desintegró"},
 			{"text": "instaló linux", "preposition": "en"},
 			{"text": "joseó"},
-			{"text": "lamió"}
+			{"text": "lamió"},
+			{"text": "se comió"},
+			{"text": "aparcó"},
+			{"text": "insultó"},
+			{"text": "larpeó"},
+			{"text": "mató"},
 		],
 		"objects": [
 			{"noun": "una abuelita", "personal": true},
@@ -20,11 +25,22 @@ const CRIMES := {
 			{"noun": "el bote de frijoles del Alcalde", "personal": false},
 			{"noun": "Jorge", "personal": true},
 			{"noun": "la colección de lápices de Kevin", "personal": false},
-			{"noun": "una puerta"}
+			{"noun": "una puerta"},
+			{"noun": "una tarjeta gráfica"},
+			{"noun": "una steam machine"},
+			{"noun": "un seis y un siete"},
+			{"noun": "tu prima", "personal": true},
+			{"noun": "la provincia de Jaén en su totalidad", "personal": true},
+			{"noun": "un chicle"},
+			{"noun": "la fruta del roscón de reyes"},
+			{"noun": "un salmorejo"},
+			{"noun": "500 hectáreas de olivos"},
+			{"noun": "Goku", "personal": true},
+			{"noun": "lo blanco del jamón"},
 		],
 	},
 	"en": {
-		"names": ["Manolo", "Ragoy", "Elsapato"],
+		"names": ["Manolo", "Ragoy", "Elsapato", "Marciano Rajoy", "Lambdas", "Diganmas", "Xokulon", "Kang", "Kodos", "E.T.", "Goku", "Glorbo", "Citripio", "Gluppo", "Mr. Penis", "Pavro", "Pablo Matón", "Pepe"],
 		"actions": [
 			{"text": "stole"},
 			{"text": "kidnapped"},
@@ -41,6 +57,12 @@ const CRIMES := {
 		],
 	},
 }
+
+static func _generate_name(lang: String = "es") -> String:
+	var data: Dictionary = CRIMES.get(lang, CRIMES["es"])
+	var name: String = data["names"].pick_random()
+	return name
+
 
 static func generate_crime(lang: String = "es") -> String:
 	var data: Dictionary = CRIMES.get(lang, CRIMES["es"])
