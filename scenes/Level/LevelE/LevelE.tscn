@@ -5,12 +5,73 @@
 [ext_resource type="PackedScene" uid="uid://dkhfai5amj0mv" path="res://scenes/Alien/Alien.tscn" id="4_65uhi"]
 [ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="5_0ptrk"]
 [ext_resource type="Texture2D" uid="uid://cw7naoilpdgqi" path="res://scenes/Level/LevelE/house.png" id="6_48u3f"]
+[ext_resource type="Texture2D" uid="uid://dru5k4axlqvxc" path="res://assets/clock.png" id="6_gjn6l"]
 [ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="6_t1lsa"]
 [ext_resource type="Texture2D" uid="uid://bhxnyeh7drw5p" path="res://scenes/Level/LevelE/door.png" id="7_gjn6l"]
 [ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_k6ue1"]
 [ext_resource type="PackedScene" uid="uid://cvhhvyf8nv3lq" path="res://scenes/music_player/MusicPlayer.tscn" id="8_jmp8s"]
 [ext_resource type="PackedScene" uid="uid://cojyexrabh4aq" path="res://scenes/Level/LevelAnimation/LevelAnimation.tscn" id="9_nh06p"]
 [ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="10_44it4"]
+
+[sub_resource type="Animation" id="Animation_bxmbf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.345, 1.345)]
+}
+
+[sub_resource type="Animation" id="Animation_l2qqt"]
+resource_name = "tictac"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.6, 0.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.3490658503988659, 0.3490658503988659, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334, 0.43333334, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.345, 1.345), Vector2(1.925, 1.925), Vector2(1.345, 1.345)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxmbf"]
+_data = {
+&"RESET": SubResource("Animation_bxmbf"),
+&"tictac": SubResource("Animation_l2qqt")
+}
 
 [sub_resource type="Animation" id="Animation_48u3f"]
 length = 0.001
@@ -138,13 +199,22 @@ one_shot = true
 
 [node name="TimeLeft" type="Label" parent="." unique_id=2075339793]
 z_index = 70
-offset_left = -57.0
+offset_left = -10.0
 offset_top = -492.0
-offset_right = 56.0
-offset_bottom = -441.0
-scale = Vector2(4.285952, 4.285952)
+offset_right = 92.0
+offset_bottom = -393.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
 text = "0.0"
+
+[node name="Sprite2D" type="Sprite2D" parent="TimeLeft" unique_id=1164394617]
+position = Vector2(-39, 50.999992)
+scale = Vector2(1.345, 1.345)
+texture = ExtResource("6_gjn6l")
+offset = Vector2(-30.76751, 456.8977)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TimeLeft" unique_id=352369099]
+libraries/ = SubResource("AnimationLibrary_bxmbf")
 
 [node name="House" type="Node2D" parent="." unique_id=110285862]
 z_index = -3

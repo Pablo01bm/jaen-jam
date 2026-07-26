@@ -127,3 +127,4 @@ func _assign_z_index() -> void:
 func _start_timer() -> void:
 	if $Timer.time_left == 0:
 		$Timer.start()
+		$TimeLeft/AnimationPlayer.play("tictac")
