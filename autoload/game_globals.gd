@@ -18,8 +18,9 @@ var current_level_index: int = 0
 var score: float = 0.0
 
 signal shake_camera
- 
+
 var alien_motherfuckers: Array[Alien] = []
+var alien_motherfuckers_faces: Array = []
 signal is_opened 
 signal is_closed
  

@@ -4,6 +4,10 @@
 
 [node name="LevelResults" type="Node2D" unique_id=2020368190]
 script = ExtResource("1_j40pc")
+start_y = 200.0
+row_height = 100.0
+face_offset_x = 109.575
+label_offset_x = 146.965
 
 [node name="Label" type="Label" parent="." unique_id=1013370939]
 offset_right = 40.0
