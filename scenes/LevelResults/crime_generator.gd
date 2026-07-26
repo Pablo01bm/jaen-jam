@@ -3,7 +3,7 @@ class_name CrimeGenerator
 
 const CRIMES := {
 	"es": {
-		"names": ["Manolo", "Ragoy", "Elsapato", "Pene Penez", "Mariuzz Bross", "Weón", "Marciano Rajoy", "Lambdas", "Diganmas", "Xokulon", "Kang", "Kodos", "E.T.", "Goku", "Glorbo", "Citripio", "Gluppo", "Jabba", "Nappa", "Mr. Penis", "Pavro", "Pablo Matón", "Pepe"],
+		"names": ["Manolo", "Ragoy", "Elsapato", "Pene Penez", "Mariuzz Bross", "Weón", "Marciano Rajoy", "Lambdas", "Diganmas", "Xokulon", "Kang", "Kodos", "E.T.", "Goku", "Glorbo", "Citripio", "Gluppo", "Jabba", "Nappa", "Mr. Penis", "Pavro", "Pablo Matón", "Pepe", "Bimbo"],
 		"actions": [
 			{"text": "robó"},
 			{"text": "secuestró"},
@@ -18,6 +18,13 @@ const CRIMES := {
 			{"text": "insultó"},
 			{"text": "larpeó"},
 			{"text": "mató"},
+			{"text": "olió"},
+			{"text": "besó"},
+			{"text": "hackeó la DSi", "preposition": "a"},
+			{"text": "invitó a café", "preposition": "a"},
+			{"text": "se montó", "preposition": "en"},
+			{"text": "se bebió"},
+			
 		],
 		"objects": [
 			{"noun": "una abuelita", "personal": true},
@@ -34,9 +41,21 @@ const CRIMES := {
 			{"noun": "un chicle"},
 			{"noun": "la fruta del roscón de reyes"},
 			{"noun": "un salmorejo"},
-			{"noun": "500 hectáreas de olivos"},
+			{"noun": "quinientas hectáreas de olivos"},
 			{"noun": "Goku", "personal": true},
 			{"noun": "lo blanco del jamón"},
+			{"noun": "la Jaén jam"},
+			{"noun": "Chiquito de la Calzada", "personal": true},
+			{"noun": "el pentágono"},
+			{"noun": "Mikel Oyarzabal", "personal": true},
+			{"noun": "los juegos físicos"},
+			{"noun": "el Guadalindie"},
+			{"noun": "el pan Bimbo"},
+
+
+
+
+
 		],
 	},
 	"en": {
