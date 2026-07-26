@@ -17,6 +17,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$Mouse.global_position = get_global_mouse_position()
 
+func _fill_names_array() -> void:
+	print("GENERANDO NOMBRES")
+	print(str(wanted_aliens))
+	var i = 0
+	for alien in wanted_aliens:
+		GameGlobals.alien_motherfuckers_names.append(CrimeGenerator._generate_name())
+		$Sprite2D/BadAliens.get_child(i).get_child(0).text = GameGlobals.alien_motherfuckers_names.get(i)
+		print(str($Sprite2D/BadAliens.get_child(i).get_child(0)))
+		i += 1
 
 func _on_area_2d_mouse_entered() -> void:
 	pass
@@ -32,6 +41,8 @@ func move_up():
 	if !reloaded:
 		reloaded = true
 		$Reload.play()
+		_fill_names_array()
+
 	
 	if tween != null:
 		tween.stop()

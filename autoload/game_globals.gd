@@ -24,6 +24,9 @@ signal shake_camera
 
 var alien_motherfuckers: Array[Alien] = []
 var alien_motherfuckers_faces: Array = []
+var alien_motherfuckers_names: Array = []
+
+
 signal is_opened 
 signal is_closed
 
