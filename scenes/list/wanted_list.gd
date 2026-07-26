@@ -27,6 +27,8 @@ func _on_area_2d_mouse_exited() -> void:
 
 
 func move_up():
+	$PageUp.pitch_scale = 1.2
+	$PageUp.play()
 	GameGlobals.is_opened.emit()
 	
 	if !reloaded:
@@ -47,6 +49,8 @@ func move_up():
 	
 
 func move_down():
+	$PageUp.pitch_scale = 0.8
+	$PageUp.play()
 	GameGlobals.is_closed.emit()
 	if tween != null:
 		tween.stop()
