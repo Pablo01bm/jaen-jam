@@ -9,6 +9,7 @@
 
 [node name="LevelA" type="Node2D" unique_id=1252264966]
 script = ExtResource("1_pth44")
+HIJOPUTA_COUNT = 3
 
 [node name="TestingBouncing" parent="." unique_id=633372936 instance=ExtResource("2_ceoao")]
 position = Vector2(-750, -500)
