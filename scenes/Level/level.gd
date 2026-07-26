@@ -13,17 +13,24 @@ const MAX_REROLL_TRIES := 30
 var m_aliens: Array[Alien] = []
 var m_hijoputas: Array[Alien] = []
 
+var started = false
+
 
 func _ready() -> void:
+	GameGlobals.level_started.emit()
 	_collect_aliens()
 	_generate_hijoputas()
 	GameManager.register_level(self)
 	_assign_z_index()
 	GameGlobals.is_closed.connect(_start_timer)
 	$Timer.timeout.connect(_game_over)
+	$TimeLeft.text = str($Timer.wait_time)
+	GameGlobals.is_closed.connect(func(): started = true)
+	$FinishTimer.timeout.connect(finish)
 
 func _process(delta):
-	$TimeLeft.text = str($Timer.time_left)
+	if started:
+		$TimeLeft.text = str(snapped($Timer.time_left, 0.1))
 
 func _collect_aliens() -> void:
 	m_aliens.clear()
@@ -89,15 +96,26 @@ func _on_alien_died(alien: Alien) -> void:
 
 
 func _check_victory() -> void:
-	level_completed.emit()
 	GameGlobals.score += ($Timer.wait_time - $Timer.time_left)
-	$Timer.stop()
+	$Timer.paused = true
+	$FinishTimer.start()
+	GameGlobals.level_finished.emit()
+	$Curtain.curtain_down()
 	
+
+func finish():
+	if $Timer.time_left > 0:
+		level_completed.emit()
+	else:
+		GameGlobals.alien_motherfuckers.clear()
+		GameManager.game_over()
+
 
 func _game_over() -> void:
 	$Timer.stop()
-	GameGlobals.alien_motherfuckers.clear()
-	GameManager.game_over()
+	$FinishTimer.start()
+	$Curtain.curtain_down()
+	GameGlobals.level_finished.emit()
 
 func _assign_z_index() -> void:
 	var aliensNode = get_node("Aliens")

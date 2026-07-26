@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://chtv5ry6pkf2p"]
 
 [ext_resource type="Script" uid="uid://5utkgn58eenj" path="res://scenes/LevelResults/level_results.gd" id="1_j40pc"]
+[ext_resource type="AudioStream" uid="uid://c66nvb6nws76r" path="res://assets/hijoputa-ost/results.ogg" id="2_01nrt"]
 
 [node name="LevelResults" type="Node2D" unique_id=2020368190]
 script = ExtResource("1_j40pc")
@@ -12,3 +13,9 @@ label_offset_x = 146.965
 [node name="Label" type="Label" parent="." unique_id=1013370939]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Results" type="AudioStreamPlayer" parent="." unique_id=1045404218]
+stream = ExtResource("2_01nrt")
+autoplay = true
+
+[connection signal="finished" from="Results" to="." method="_on_results_finished"]

@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://innvo6bcomyv"]
+
+[ext_resource type="Script" uid="uid://dbwg2lodhtsc7" path="res://scenes/Level/level.gd" id="1_8n2fg"]
+[ext_resource type="PackedScene" uid="uid://bovf6uisn75g4" path="res://scenes/TestingBouncing/TestingBouncing.tscn" id="2_mke2o"]
+[ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="3_0g6aw"]
+[ext_resource type="PackedScene" uid="uid://dkhfai5amj0mv" path="res://scenes/Alien/Alien.tscn" id="4_8y84q"]
+[ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="5_k4u4h"]
+[ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="6_kxm8g"]
+[ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_y4nko"]
+[ext_resource type="PackedScene" uid="uid://cw6tyb5cn6ldr" path="res://scenes/hazards/Trash.tscn" id="8_srki4"]
+[ext_resource type="PackedScene" uid="uid://cvhhvyf8nv3lq" path="res://scenes/music_player/MusicPlayer.tscn" id="9_dgh46"]
+[ext_resource type="PackedScene" uid="uid://cojyexrabh4aq" path="res://scenes/Level/LevelAnimation/LevelAnimation.tscn" id="10_85ids"]
+[ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="11_8l7mq"]
+
+[node name="LevelC" type="Node2D" unique_id=1545661808]
+script = ExtResource("1_8n2fg")
+HIJOPUTA_COUNT = 2
+
+[node name="TestingBouncing" parent="." unique_id=633372936 instance=ExtResource("2_mke2o")]
+position = Vector2(-750, -500)
+
+[node name="Player" parent="." unique_id=126226238 instance=ExtResource("3_0g6aw")]
+position = Vector2(-750, -500)
+
+[node name="Aliens" type="Node2D" parent="." unique_id=1280121714]
+position = Vector2(-750, -500)
+
+[node name="Alien" parent="Aliens" unique_id=1485095013 instance=ExtResource("4_8y84q")]
+position = Vector2(1034, 528)
+
+[node name="Alien2" parent="Aliens" unique_id=383292592 instance=ExtResource("4_8y84q")]
+position = Vector2(326, 221)
+
+[node name="Alien3" parent="Aliens" unique_id=1049970526 instance=ExtResource("4_8y84q")]
+position = Vector2(830, 249)
+
+[node name="Alien4" parent="Aliens" unique_id=2032595669 instance=ExtResource("4_8y84q")]
+position = Vector2(205, 499)
+
+[node name="Alien5" parent="Aliens" unique_id=1384696507 instance=ExtResource("4_8y84q")]
+position = Vector2(1334, 718)
+
+[node name="Alien6" parent="Aliens" unique_id=1589768852 instance=ExtResource("4_8y84q")]
+position = Vector2(532, 686)
+
+[node name="Alien7" parent="Aliens" unique_id=1832505555 instance=ExtResource("4_8y84q")]
+position = Vector2(518, 483)
+
+[node name="Alien8" parent="Aliens" unique_id=100855696 instance=ExtResource("4_8y84q")]
+position = Vector2(855, 557)
+
+[node name="WantedList" parent="." unique_id=1691400195 instance=ExtResource("5_k4u4h")]
+position = Vector2(17, -4)
+
+[node name="Camera" parent="." unique_id=1566412125 instance=ExtResource("6_kxm8g")]
+
+[node name="Timer" type="Timer" parent="." unique_id=1023940870]
+wait_time = 12.0
+one_shot = true
+
+[node name="Background" parent="." unique_id=1086620487 instance=ExtResource("7_y4nko")]
+
+[node name="TimeLeft" type="Label" parent="." unique_id=1012525937]
+z_index = 70
+offset_left = -57.0
+offset_top = -492.0
+offset_right = 56.0
+offset_bottom = -441.0
+scale = Vector2(4.285952, 4.285952)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.0"
+
+[node name="Trash" parent="." unique_id=80362680 instance=ExtResource("8_srki4")]
+position = Vector2(-234, -162)
+
+[node name="Trash2" parent="." unique_id=617155336 instance=ExtResource("8_srki4")]
+position = Vector2(475, -386)
+
+[node name="Trash3" parent="." unique_id=1941065950 instance=ExtResource("8_srki4")]
+position = Vector2(298, -26)
+
+[node name="Trash4" parent="." unique_id=504034360 instance=ExtResource("8_srki4")]
+position = Vector2(-172, 89)
+
+[node name="Trash5" parent="." unique_id=761268873 instance=ExtResource("8_srki4")]
+position = Vector2(83, -231)
+
+[node name="Trash6" parent="." unique_id=579517444 instance=ExtResource("8_srki4")]
+position = Vector2(551, 237)
+
+[node name="Trash7" parent="." unique_id=1822040562 instance=ExtResource("8_srki4")]
+position = Vector2(-573, -45)
+
+[node name="Trash8" parent="." unique_id=71701124 instance=ExtResource("8_srki4")]
+position = Vector2(-444, -331)
+
+[node name="Trash9" parent="." unique_id=1262739485 instance=ExtResource("8_srki4")]
+position = Vector2(-470, 201)
+
+[node name="Trash10" parent="." unique_id=452652157 instance=ExtResource("8_srki4")]
+position = Vector2(112, 232)
+
+[node name="Trash11" parent="." unique_id=2032741389 instance=ExtResource("8_srki4")]
+position = Vector2(556, -138)
+
+[node name="Trash12" parent="." unique_id=382170767 instance=ExtResource("8_srki4")]
+position = Vector2(-189, -348)
+
+[node name="Trash13" parent="." unique_id=1100930197 instance=ExtResource("8_srki4")]
+position = Vector2(286, -202)
+
+[node name="Trash14" parent="." unique_id=396444736 instance=ExtResource("8_srki4")]
+position = Vector2(14, -23)
+
+[node name="Trash15" parent="." unique_id=1258721544 instance=ExtResource("8_srki4")]
+position = Vector2(348, 157)
+
+[node name="Trash16" parent="." unique_id=1923886059 instance=ExtResource("8_srki4")]
+position = Vector2(551, 35)
+
+[node name="Trash17" parent="." unique_id=885877487 instance=ExtResource("8_srki4")]
+position = Vector2(-663, -286)
+
+[node name="FinishTimer" type="Timer" parent="." unique_id=1292628071]
+wait_time = 2.0
+one_shot = true
+
+[node name="MusicPlayer" parent="." unique_id=412988022 instance=ExtResource("9_dgh46")]
+
+[node name="LevelAnimation" parent="." unique_id=227420322 instance=ExtResource("10_85ids")]
+position = Vector2(-751, -501)
+
+[node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("11_8l7mq")]
+position = Vector2(-751, -520)

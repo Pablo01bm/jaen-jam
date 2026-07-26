@@ -43,3 +43,7 @@ func _add_result_row(index: int, face_signature: Array) -> void:
 func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		GameManager._next_level()
+
+
+func _on_results_finished() -> void:
+	$Results.play()

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cw6tyb5cn6ldr"]
+
+[ext_resource type="Texture2D" uid="uid://bad22r24ckfyd" path="res://scenes/hazards/trash.png" id="1_1ubyl"]
+[ext_resource type="Script" uid="uid://bq5l67icodexu" path="res://scenes/hazards/trash.gd" id="1_ebhnw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebhnw"]
+atlas = ExtResource("1_1ubyl")
+region = Rect2(0, 0, 189, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf1or"]
+atlas = ExtResource("1_1ubyl")
+region = Rect2(567, 0, 189, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1fhg"]
+atlas = ExtResource("1_1ubyl")
+region = Rect2(189, 0, 189, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4noo"]
+atlas = ExtResource("1_1ubyl")
+region = Rect2(378, 0, 189, 208)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pm288"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebhnw")
+}],
+"loop": 1,
+"name": &"bag",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf1or")
+}],
+"loop": 1,
+"name": &"boot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1fhg")
+}],
+"loop": 1,
+"name": &"can",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4noo")
+}],
+"loop": 1,
+"name": &"wheel",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64c3n"]
+radius = 42.047592
+
+[node name="Trash" type="StaticBody2D" unique_id=80362680]
+z_index = 20
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ebhnw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=277719147]
+sprite_frames = SubResource("SpriteFrames_pm288")
+animation = &"wheel"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1071698852]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_64c3n")

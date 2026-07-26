@@ -6,6 +6,10 @@ extends Node2D
 %AlienFace2,
 %AlienFace3]
 
+var reloaded = false
+
+var blur = Vector2(4.0, 4.0)
+
 func _ready() -> void:
 	for i in range(wanted_aliens.size()):
 		aliens.get(i).visible = true
@@ -25,13 +29,18 @@ func _on_area_2d_mouse_exited() -> void:
 func move_up():
 	GameGlobals.is_opened.emit()
 	
+	if !reloaded:
+		reloaded = true
+		$Reload.play()
+	
 	if tween != null:
 		tween.stop()
 		tween.kill()
 	tween = get_tree().create_tween()
-	tween.tween_property($Sprite2D, "position", Vector2(0.0, 4.0), 0.4)
+	tween.parallel().tween_property($Sprite2D, "position", Vector2(0.0, 4.0), 0.4)
+	tween.parallel().tween_method(set_shader_value, Vector2.ZERO, blur, 0.2)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_BOUNCE)
+	#tween.set_trans(Tween.TRANS_CUBIC)
 	tween.play()
 	
 
@@ -41,10 +50,16 @@ func move_down():
 		tween.stop()
 		tween.kill()
 	tween = get_tree().create_tween()
-	tween.tween_property($Sprite2D, "position", Vector2(0.0, 707.0), 0.4)
+	tween.parallel().tween_property($Sprite2D, "position", Vector2(0.0, 707.0), 0.4)
+	tween.parallel().tween_method(set_shader_value, blur, Vector2.ZERO, 0.2)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_BOUNCE)
+	#tween.set_trans(Tween.TRANS_CUBIC)
 	tween.play()
+
+
+func set_shader_value(value: Vector2):
+	# in my case i'm tweening a shader on a texture rect, but you can use anything with a material on it
+	$Blur.material.set_shader_parameter("blur_size", value)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

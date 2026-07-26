@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bgoqf4wqgqddq"]
+
+[ext_resource type="Script" uid="uid://dbwg2lodhtsc7" path="res://scenes/Level/level.gd" id="1_5arfm"]
+[ext_resource type="PackedScene" uid="uid://bovf6uisn75g4" path="res://scenes/TestingBouncing/TestingBouncing.tscn" id="2_w6d28"]
+[ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="3_uc2pr"]
+[ext_resource type="PackedScene" uid="uid://dkhfai5amj0mv" path="res://scenes/Alien/Alien.tscn" id="4_p7bml"]
+[ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="5_vc4f2"]
+[ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="6_kifwb"]
+[ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_h72we"]
+[ext_resource type="PackedScene" uid="uid://cvhhvyf8nv3lq" path="res://scenes/music_player/MusicPlayer.tscn" id="9_bc886"]
+[ext_resource type="PackedScene" uid="uid://cojyexrabh4aq" path="res://scenes/Level/LevelAnimation/LevelAnimation.tscn" id="10_gd561"]
+[ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="11_5428u"]
+[ext_resource type="PackedScene" uid="uid://cvfm4vcdop2ux" path="res://scenes/hazards/Train.tscn" id="11_hyhqm"]
+
+[node name="LevelD" type="Node2D" unique_id=1545661808]
+script = ExtResource("1_5arfm")
+HIJOPUTA_COUNT = 2
+
+[node name="TestingBouncing" parent="." unique_id=633372936 instance=ExtResource("2_w6d28")]
+position = Vector2(-750, -500)
+
+[node name="Player" parent="." unique_id=126226238 instance=ExtResource("3_uc2pr")]
+position = Vector2(-750, -500)
+
+[node name="Aliens" type="Node2D" parent="." unique_id=1280121714]
+position = Vector2(-750, -500)
+
+[node name="Alien" parent="Aliens" unique_id=1485095013 instance=ExtResource("4_p7bml")]
+position = Vector2(1034, 528)
+
+[node name="Alien2" parent="Aliens" unique_id=383292592 instance=ExtResource("4_p7bml")]
+position = Vector2(326, 221)
+
+[node name="Alien3" parent="Aliens" unique_id=1049970526 instance=ExtResource("4_p7bml")]
+position = Vector2(830, 249)
+
+[node name="Alien4" parent="Aliens" unique_id=2032595669 instance=ExtResource("4_p7bml")]
+position = Vector2(205, 499)
+
+[node name="Alien5" parent="Aliens" unique_id=1384696507 instance=ExtResource("4_p7bml")]
+position = Vector2(1334, 718)
+
+[node name="Alien6" parent="Aliens" unique_id=1589768852 instance=ExtResource("4_p7bml")]
+position = Vector2(532, 686)
+
+[node name="Alien7" parent="Aliens" unique_id=1832505555 instance=ExtResource("4_p7bml")]
+position = Vector2(518, 483)
+
+[node name="Alien8" parent="Aliens" unique_id=100855696 instance=ExtResource("4_p7bml")]
+position = Vector2(855, 557)
+
+[node name="WantedList" parent="." unique_id=1691400195 instance=ExtResource("5_vc4f2")]
+position = Vector2(17, -4)
+
+[node name="Camera" parent="." unique_id=1566412125 instance=ExtResource("6_kifwb")]
+
+[node name="Timer" type="Timer" parent="." unique_id=1023940870]
+wait_time = 12.0
+one_shot = true
+
+[node name="Background" parent="." unique_id=1086620487 instance=ExtResource("7_h72we")]
+
+[node name="TimeLeft" type="Label" parent="." unique_id=1012525937]
+z_index = 70
+offset_left = -57.0
+offset_top = -492.0
+offset_right = 56.0
+offset_bottom = -441.0
+scale = Vector2(4.285952, 4.285952)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.0"
+
+[node name="FinishTimer" type="Timer" parent="." unique_id=1292628071]
+wait_time = 2.0
+one_shot = true
+
+[node name="MusicPlayer" parent="." unique_id=412988022 instance=ExtResource("9_bc886")]
+
+[node name="LevelAnimation" parent="." unique_id=227420322 instance=ExtResource("10_gd561")]
+position = Vector2(-751, -501)
+
+[node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("11_5428u")]
+position = Vector2(-751, -520)
+
+[node name="Train" parent="." unique_id=967465228 instance=ExtResource("11_hyhqm")]
+position = Vector2(-1549, -265)
+speed = 600
+
+[node name="Train2" parent="." unique_id=1642984413 instance=ExtResource("11_hyhqm")]
+position = Vector2(1511, 162)
+scale = Vector2(-1, 1)
+speed = 600

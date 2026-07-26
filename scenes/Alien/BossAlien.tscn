@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bd2l2faofyuo0"]
+
+[ext_resource type="Script" uid="uid://dcx180mh4johk" path="res://scenes/Alien/boss_alien.gd" id="1_dk4gm"]
+[ext_resource type="Texture2D" uid="uid://c5w7g8hruseh8" path="res://scenes/Alien/ovni.png" id="2_vs4rl"]
+[ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="3_2keou"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64c3n"]
+atlas = ExtResource("2_vs4rl")
+region = Rect2(160, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aevum"]
+atlas = ExtResource("2_vs4rl")
+region = Rect2(0, 160, 0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_by4yl"]
+radius = 9.29432
+
+[node name="BossAlien" type="CharacterBody2D" unique_id=1485095013]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_dk4gm")
+
+[node name="Ovni" type="Node2D" parent="." unique_id=1608249517]
+
+[node name="Cristal" type="Sprite2D" parent="Ovni" unique_id=1795401273]
+position = Vector2(76, 84)
+texture = SubResource("AtlasTexture_64c3n")
+
+[node name="Nave" type="Sprite2D" parent="Ovni" unique_id=1466186770]
+position = Vector2(76, 84)
+texture = SubResource("AtlasTexture_aevum")
+
+[node name="AlienFace" parent="Ovni" unique_id=548084301 instance=ExtResource("3_2keou")]
+unique_name_in_owner = true
+modulate = Color(0.024553597, 1, 0.09752005, 1)
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50131872]
+position = Vector2(-4, -2)
+scale = Vector2(5.81, 5.81)
+shape = SubResource("CircleShape2D_by4yl")
+
+[node name="Timer" type="Timer" parent="." unique_id=1853910618]
+wait_time = 0.75
+one_shot = true
+
+[node name="Starting" type="Timer" parent="." unique_id=284279097]
+wait_time = 0.5
+one_shot = true
+autostart = true

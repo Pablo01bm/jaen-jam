@@ -1,0 +1,292 @@
+[gd_scene format=3 uid="uid://cvfm4vcdop2ux"]
+
+[ext_resource type="Script" uid="uid://dsvam0vtx43d3" path="res://scenes/hazards/train.gd" id="1_7ws5p"]
+[ext_resource type="Texture2D" uid="uid://c4itkkrb7rqxy" path="res://scenes/hazards/train4.png" id="1_84qk0"]
+[ext_resource type="Script" uid="uid://b3y1t51jqoyvi" path="res://scenes/hazards/hazard.gd" id="2_fhnlq"]
+[ext_resource type="Texture2D" uid="uid://cuddycjce7xq7" path="res://scenes/hazards/train3.png" id="3_w1k5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm288"]
+size = Vector2(718, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1k5o"]
+size = Vector2(114, 295)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xmru"]
+size = Vector2(29, 285)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ws5p"]
+size = Vector2(499, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64c3n"]
+size = Vector2(948, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bswb3"]
+size = Vector2(28, 268)
+
+[node name="Train" type="StaticBody2D" unique_id=967465228]
+z_index = 40
+script = ExtResource("1_7ws5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=477191597]
+texture = ExtResource("1_84qk0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=332957020]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1571432694]
+position = Vector2(-93, 117)
+shape = SubResource("RectangleShape2D_pm288")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Sprite2D" unique_id=1588005340]
+position = Vector2(0, -267)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D2" unique_id=1601024309]
+position = Vector2(-94, 117)
+shape = SubResource("RectangleShape2D_pm288")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Sprite2D" unique_id=1918327425]
+position = Vector2(498, -267)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D3" unique_id=1017609465]
+position = Vector2(-401, 249.5)
+shape = SubResource("RectangleShape2D_w1k5o")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Sprite2D" unique_id=1677704026]
+position = Vector2(3, -267)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D5" unique_id=570737052]
+position = Vector2(-442.5, 243.5)
+shape = SubResource("RectangleShape2D_8xmru")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Sprite2D" unique_id=1245387876]
+position = Vector2(498, -267)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D4" unique_id=1533510739]
+position = Vector2(-161.5, 341)
+shape = SubResource("RectangleShape2D_7ws5p")
+
+[node name="Wagon" type="Sprite2D" parent="." unique_id=503043129]
+position = Vector2(-1001, 0)
+texture = ExtResource("3_w1k5o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Wagon" unique_id=1641533062]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon/StaticBody2D" unique_id=1101555455]
+position = Vector2(19, -153)
+shape = SubResource("RectangleShape2D_64c3n")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Wagon" unique_id=991475514]
+position = Vector2(0, 267)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon/StaticBody2D2" unique_id=1171614970]
+position = Vector2(19, -153)
+shape = SubResource("RectangleShape2D_64c3n")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Wagon" unique_id=1113682582]
+position = Vector2(-457, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon/StaticBody2D3" unique_id=1961615867]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Wagon" unique_id=843635041]
+position = Vector2(10, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon/StaticBody2D4" unique_id=1411479613]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Wagon" unique_id=652054319]
+position = Vector2(460, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon/StaticBody2D5" unique_id=178814808]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="Wagon2" type="Sprite2D" parent="." unique_id=78929768]
+position = Vector2(-2004, 0)
+texture = ExtResource("3_w1k5o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Wagon2" unique_id=2010658289]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon2/StaticBody2D" unique_id=1570175370]
+position = Vector2(19, -153)
+shape = SubResource("RectangleShape2D_64c3n")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Wagon2" unique_id=1163969417]
+position = Vector2(0, 267)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon2/StaticBody2D2" unique_id=1985432139]
+position = Vector2(19, -153)
+shape = SubResource("RectangleShape2D_64c3n")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Wagon2" unique_id=493781038]
+position = Vector2(-457, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon2/StaticBody2D3" unique_id=1619460424]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Wagon2" unique_id=416425490]
+position = Vector2(10, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon2/StaticBody2D4" unique_id=1298879399]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Wagon2" unique_id=839026130]
+position = Vector2(460, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon2/StaticBody2D5" unique_id=807663134]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="Wagon3" type="Sprite2D" parent="." unique_id=1524597890]
+position = Vector2(-3007, 0)
+texture = ExtResource("3_w1k5o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Wagon3" unique_id=1785367149]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon3/StaticBody2D" unique_id=1803193826]
+position = Vector2(19, -153)
+shape = SubResource("RectangleShape2D_64c3n")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Wagon3" unique_id=1458656930]
+position = Vector2(0, 267)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon3/StaticBody2D2" unique_id=1016321797]
+position = Vector2(19, -153)
+shape = SubResource("RectangleShape2D_64c3n")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Wagon3" unique_id=2083034762]
+position = Vector2(-457, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon3/StaticBody2D3" unique_id=2113437955]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Wagon3" unique_id=336415743]
+position = Vector2(10, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon3/StaticBody2D4" unique_id=1058085439]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Wagon3" unique_id=194062466]
+position = Vector2(460, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon3/StaticBody2D5" unique_id=1889741208]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="Wagon4" type="Sprite2D" parent="." unique_id=520381723]
+position = Vector2(-4010, 0)
+texture = ExtResource("3_w1k5o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Wagon4" unique_id=1886257971]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon4/StaticBody2D" unique_id=550160583]
+position = Vector2(19, -153)
+shape = SubResource("RectangleShape2D_64c3n")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Wagon4" unique_id=894247193]
+position = Vector2(0, 267)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon4/StaticBody2D2" unique_id=871862813]
+position = Vector2(19, -153)
+shape = SubResource("RectangleShape2D_64c3n")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Wagon4" unique_id=1291020811]
+position = Vector2(-457, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon4/StaticBody2D3" unique_id=722424879]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Wagon4" unique_id=883072749]
+position = Vector2(10, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon4/StaticBody2D4" unique_id=1044859557]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Wagon4" unique_id=703381454]
+position = Vector2(460, 129)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_fhnlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wagon4/StaticBody2D5" unique_id=1954057876]
+position = Vector2(15, -161)
+shape = SubResource("RectangleShape2D_bswb3")

@@ -4,6 +4,9 @@ extends Node
 const LEVELS := [
 	"res://scenes/Level/LevelA/LevelA.tscn",
 	"res://scenes/Level/LevelB/LevelB.tscn",
+	"res://scenes/Level/LevelC/LevelC.tscn",
+	"res://scenes/Level/LevelD/LevelD.tscn",
+	"res://scenes/Level/LevelE/LevelE.tscn",
 ]
 
 const MENUS := [
@@ -23,6 +26,11 @@ var alien_motherfuckers: Array[Alien] = []
 var alien_motherfuckers_faces: Array = []
 signal is_opened 
 signal is_closed
+
+signal level_started
+signal level_finished
+
+signal boss_appeared
  
 func reset() -> void:
 	current_level_index = 0

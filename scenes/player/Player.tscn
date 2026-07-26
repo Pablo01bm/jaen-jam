@@ -4,8 +4,116 @@
 [ext_resource type="Texture2D" uid="uid://in4oglso3dn8" path="res://scenes/player/heircross.png" id="1_wr5hl"]
 [ext_resource type="Texture2D" uid="uid://f75s7aisqqma" path="res://scenes/player/heircross2.png" id="2_524rm"]
 [ext_resource type="Texture2D" uid="uid://dhtpkgd0cxpb8" path="res://scenes/player/pointer.png" id="3_4kuee"]
+[ext_resource type="AudioStream" uid="uid://bmc6c3dewqiwr" path="res://assets/hijoputa-sounds/metal-hit-con-efecto.wav" id="5_tpg5x"]
+[ext_resource type="AudioStream" uid="uid://bjg6c1yn60it1" path="res://assets/hijoputa-sounds/gunshot3.wav" id="6_c3xxp"]
+[ext_resource type="AudioStream" uid="uid://datpny0x7n801" path="res://assets/hijoputa-sounds/wrong1.wav" id="6_npwbq"]
+[ext_resource type="AudioStream" uid="uid://x8w8x35wjnmc" path="res://assets/hijoputa-sounds/metal-anvil.wav" id="6_v42im"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mw1b"]
+
+[sub_resource type="Animation" id="Animation_v42im"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heircross/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeircrossFail/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HeircrossFail:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7oing"]
+resource_name = "error"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HeircrossFail/Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(40, 0), Vector2(-40, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pn6s4"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heircross/Sprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.73, 0.73), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5stf6"]
+resource_name = "on_cooldown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HeircrossFail:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-40, 0), Vector2(40, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Heircross:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333333, 0.26666665, 0.39999998),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-40, 0), Vector2(40, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7oing"]
+_data = {
+&"RESET": SubResource("Animation_v42im"),
+&"error": SubResource("Animation_7oing"),
+&"hit": SubResource("Animation_pn6s4"),
+&"on_cooldown": SubResource("Animation_5stf6")
+}
 
 [node name="Player" type="Node2D" unique_id=126226238]
 z_index = 100
@@ -54,5 +162,22 @@ shape = SubResource("CircleShape2D_2mw1b")
 one_shot = true
 
 [node name="InnocentKilled" type="Timer" parent="." unique_id=721913364]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
+
+[node name="WantedHit" type="AudioStreamPlayer" parent="." unique_id=438930982]
+stream = ExtResource("5_tpg5x")
+
+[node name="WantedHit2" type="AudioStreamPlayer" parent="." unique_id=247273627]
+stream = ExtResource("6_v42im")
+
+[node name="GoodHit" type="AudioStreamPlayer" parent="." unique_id=1805422179]
+stream = ExtResource("6_npwbq")
+volume_db = -8.0
+
+[node name="Shoot" type="AudioStreamPlayer" parent="." unique_id=80217610]
+stream = ExtResource("6_c3xxp")
+volume_db = -5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1090734774]
+libraries/ = SubResource("AnimationLibrary_7oing")

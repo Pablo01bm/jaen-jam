@@ -3,6 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://mbs8goq1g30n" path="res://scenes/list/list.png" id="1_iw7nr"]
 [ext_resource type="Script" uid="uid://de2bhn4hbmrwh" path="res://scenes/list/wanted_list.gd" id="1_rh1oy"]
 [ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="3_cbkq7"]
+[ext_resource type="Shader" uid="uid://crrjdebmsjf3p" path="res://scenes/list/WantedList.gdshader" id="4_6c201"]
+[ext_resource type="AudioStream" uid="uid://deeky1stx5yc0" path="res://assets/hijoputa-sounds/reload.wav" id="5_ctnue"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pm288"]
+shader = ExtResource("4_6c201")
+shader_parameter/blur_size = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pm288"]
 size = Vector2(726, 870)
@@ -62,20 +68,28 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_pm288"]
 
 [node name="WantedList" type="Node2D" unique_id=1691400195]
-z_index = 20
+z_index = 50
 script = ExtResource("1_rh1oy")
+
+[node name="Blur" type="ColorRect" parent="." unique_id=536222063]
+material = SubResource("ShaderMaterial_pm288")
+offset_left = -2035.0
+offset_top = -1573.0
+offset_right = 2044.0
+offset_bottom = 1165.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=919460079]
+position = Vector2(0, 707)
+collision_layer = 0
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=716491564]
+position = Vector2(-14, 135)
+shape = SubResource("RectangleShape2D_pm288")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=110941739]
 position = Vector2(0, 707)
 texture = ExtResource("1_iw7nr")
-
-[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=919460079]
-collision_layer = 0
-collision_mask = 2048
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=716491564]
-position = Vector2(-14, 135)
-shape = SubResource("RectangleShape2D_pm288")
 
 [node name="Wanted" type="Label" parent="Sprite2D" unique_id=2012431401]
 offset_left = -201.0
@@ -141,7 +155,11 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse" unique_id=916753377]
 shape = SubResource("CircleShape2D_pm288")
 
-[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="Reload" type="AudioStreamPlayer" parent="." unique_id=1377318016]
+stream = ExtResource("5_ctnue")
+volume_db = 10.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
