@@ -2,9 +2,12 @@ extends Node
  
 ## Orden en el que se juegan los niveles.
 const LEVELS := [
+	"res://scenes/Level/LevelD/LevelD.tscn",
 	"res://scenes/Level/LevelA/LevelA.tscn",
 	"res://scenes/Level/LevelB/LevelB.tscn",
-	"res://scenes/Level/LevelC/LevelC.tscn"
+	"res://scenes/Level/LevelC/LevelC.tscn",
+	
+	
 ]
 
 const MENUS := [
