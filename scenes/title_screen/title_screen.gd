@@ -13,6 +13,7 @@ func _process(delta):
 	if  Input.is_action_just_pressed("shoot"):
 		$Timer.start()
 		$Curtain.curtain_down()
+		$SOAB3.visible = false
 
 
 func _on_timer_timeout() -> void:

@@ -131,14 +131,16 @@ one_shot = true
 position = Vector2(-755, -503)
 
 [node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("10_hsgin")]
+visible = false
 position = Vector2(-751, -520)
 
 [node name="TimeLeft" type="Label" parent="." unique_id=1262137224]
 z_index = 70
 offset_left = -10.0
-offset_top = -492.0
+offset_top = -497.0
 offset_right = 92.0
-offset_bottom = -393.0
+offset_bottom = -398.0
+scale = Vector2(1.5003545, 1.5003545)
 theme = ExtResource("11_oum4k")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 72
