@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvhhvyf8nv3lq" path="res://scenes/music_player/MusicPlayer.tscn" id="8_bi7lx"]
 [ext_resource type="PackedScene" uid="uid://cojyexrabh4aq" path="res://scenes/Level/LevelAnimation/LevelAnimation.tscn" id="9_kille"]
 [ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="10_hsgin"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="11_oum4k"]
 [ext_resource type="Texture2D" uid="uid://dru5k4axlqvxc" path="res://assets/clock.png" id="11_xoqef"]
 
 [sub_resource type="Animation" id="Animation_bxmbf"]
@@ -130,7 +131,6 @@ one_shot = true
 position = Vector2(-755, -503)
 
 [node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("10_hsgin")]
-visible = false
 position = Vector2(-751, -520)
 
 [node name="TimeLeft" type="Label" parent="." unique_id=1262137224]
@@ -139,6 +139,7 @@ offset_left = -10.0
 offset_top = -492.0
 offset_right = 92.0
 offset_bottom = -393.0
+theme = ExtResource("11_oum4k")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 72
 text = "0.0"

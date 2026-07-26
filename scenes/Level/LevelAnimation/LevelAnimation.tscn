@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cojyexrabh4aq"]
 
 [ext_resource type="Script" uid="uid://mdpodvb2fhdp" path="res://scenes/Level/LevelAnimation/level_animation.gd" id="1_u4ocr"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="2_1ls5k"]
 
 [sub_resource type="Animation" id="Animation_u4ocr"]
-length = 0.001
+length = 0.033333335
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -72,9 +73,20 @@ offset_left = 619.0
 offset_top = -240.0
 offset_right = 864.0
 offset_bottom = -21.0
+theme = ExtResource("2_1ls5k")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 160
-text = "1/5"
+text = "1 5"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Label" unique_id=1287384397]
+layout_mode = 0
+offset_left = 123.000015
+offset_top = 46.0
+offset_right = 130.00002
+offset_bottom = 168.88287
+rotation = 0.24221091
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1983905278]
 libraries/ = SubResource("AnimationLibrary_lsd63")

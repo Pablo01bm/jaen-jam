@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cvhhvyf8nv3lq" path="res://scenes/music_player/MusicPlayer.tscn" id="9_dgh46"]
 [ext_resource type="PackedScene" uid="uid://cojyexrabh4aq" path="res://scenes/Level/LevelAnimation/LevelAnimation.tscn" id="10_85ids"]
 [ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="11_8l7mq"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="12_1caam"]
 [ext_resource type="Texture2D" uid="uid://dru5k4axlqvxc" path="res://assets/clock.png" id="12_c36cv"]
 
 [sub_resource type="Animation" id="Animation_bxmbf"]
@@ -190,6 +191,7 @@ offset_left = -10.0
 offset_top = -492.0
 offset_right = 92.0
 offset_bottom = -393.0
+theme = ExtResource("12_1caam")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 72
 text = "0.0"

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="5_0ptrk"]
 [ext_resource type="Texture2D" uid="uid://cw7naoilpdgqi" path="res://scenes/Level/LevelE/house.png" id="6_48u3f"]
 [ext_resource type="Texture2D" uid="uid://dru5k4axlqvxc" path="res://assets/clock.png" id="6_gjn6l"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="6_l2qqt"]
 [ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="6_t1lsa"]
 [ext_resource type="Texture2D" uid="uid://bhxnyeh7drw5p" path="res://scenes/Level/LevelE/door.png" id="7_gjn6l"]
 [ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_k6ue1"]
@@ -203,6 +204,7 @@ offset_left = -10.0
 offset_top = -492.0
 offset_right = 92.0
 offset_bottom = -393.0
+theme = ExtResource("6_l2qqt")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 72
 text = "0.0"
@@ -243,7 +245,6 @@ one_shot = true
 position = Vector2(-755, -503)
 
 [node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("10_44it4")]
-visible = false
 position = Vector2(-751, -520)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2100698679]

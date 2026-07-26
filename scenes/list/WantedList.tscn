@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://de2bhn4hbmrwh" path="res://scenes/list/wanted_list.gd" id="1_rh1oy"]
 [ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="3_cbkq7"]
 [ext_resource type="Shader" uid="uid://crrjdebmsjf3p" path="res://scenes/list/WantedList.gdshader" id="4_6c201"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="4_kn075"]
 [ext_resource type="AudioStream" uid="uid://deeky1stx5yc0" path="res://assets/hijoputa-sounds/reload.wav" id="5_ctnue"]
 [ext_resource type="Texture2D" uid="uid://3bsol68uoa5b" path="res://assets/arrow.png" id="6_ivkdo"]
 [ext_resource type="AudioStream" uid="uid://bsa5n5kblsqdt" path="res://assets/hijoputa-sounds/turn-page-2.wav" id="7_3gfxk"]
@@ -131,10 +132,11 @@ position = Vector2(0, 707)
 texture = ExtResource("1_iw7nr")
 
 [node name="Wanted" type="Label" parent="Sprite2D" unique_id=2012431401]
-offset_left = -201.0
-offset_top = -191.0
-offset_right = 178.0
-offset_bottom = -82.0
+offset_left = -152.0
+offset_top = -200.0
+offset_right = 227.0
+offset_bottom = -91.0
+theme = ExtResource("4_kn075")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 79
 text = "WANTED!!"
@@ -153,7 +155,9 @@ offset_left = 39.128006
 offset_top = -4.53061
 offset_right = 116.128006
 offset_bottom = 18.46939
+theme = ExtResource("4_kn075")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 text = "Nombre 1"
 
 [node name="AlienFace2" parent="Sprite2D/BadAliens" unique_id=1314295802 instance=ExtResource("3_cbkq7")]
@@ -167,7 +171,9 @@ offset_left = 39.128006
 offset_top = -4.53061
 offset_right = 116.128006
 offset_bottom = 18.46939
+theme = ExtResource("4_kn075")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 text = "Nombre 1"
 
 [node name="AlienFace3" parent="Sprite2D/BadAliens" unique_id=1907983893 instance=ExtResource("3_cbkq7")]
@@ -181,7 +187,9 @@ offset_left = 39.128006
 offset_top = -4.53061
 offset_right = 116.128006
 offset_bottom = 18.46939
+theme = ExtResource("4_kn075")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 text = "Nombre 1"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1066630583]
