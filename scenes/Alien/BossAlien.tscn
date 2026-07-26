@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://dcx180mh4johk" path="res://scenes/Alien/boss_alien.gd" id="1_dk4gm"]
 [ext_resource type="Texture2D" uid="uid://c5w7g8hruseh8" path="res://scenes/Alien/ovni.png" id="2_vs4rl"]
 [ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="3_2keou"]
+[ext_resource type="Texture2D" uid="uid://dfvtsivmb6deg" path="res://scenes/ovni_particles/smoke2.png" id="4_g0dqb"]
+[ext_resource type="Gradient" uid="uid://8fuf2fpvwius" path="res://assets/smoke_ramp.tres" id="5_d0dut"]
+[ext_resource type="Texture2D" uid="uid://dtkk0ipjss5v2" path="res://scenes/ovni_particles/smoke3.png" id="6_bkug8"]
+[ext_resource type="Texture2D" uid="uid://bt6jxu66jmhdc" path="res://assets/shit1.png" id="7_8covk"]
+[ext_resource type="Texture2D" uid="uid://bguo25uw78014" path="res://assets/shit2.png" id="8_v63t8"]
+[ext_resource type="Texture2D" uid="uid://dca736hm8x42u" path="res://assets/shit3.png" id="9_ygkmh"]
+[ext_resource type="Texture2D" uid="uid://b5hcgs3wyfuvo" path="res://assets/shit4.png" id="10_7ktbc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64c3n"]
 atlas = ExtResource("2_vs4rl")
@@ -14,6 +21,46 @@ region = Rect2(0, 160, 0, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_by4yl"]
 radius = 9.29432
+
+[sub_resource type="Animation" id="Animation_g0dqb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ovni:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d0dut"]
+resource_name = "shake"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ovni:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666669, 0.20000002, 0.23333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(8, -6), Vector2(-7, 8), Vector2(0, 0), Vector2(8, -6), Vector2(-7, 8), Vector2(-7, -6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkug8"]
+_data = {
+&"RESET": SubResource("Animation_g0dqb"),
+&"shake": SubResource("Animation_d0dut")
+}
+
+[sub_resource type="Gradient" id="Gradient_wng0y"]
+offsets = PackedFloat32Array(0.07597173, 0.59893996, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
 
 [node name="BossAlien" type="CharacterBody2D" unique_id=1485095013]
 collision_layer = 2
@@ -48,3 +95,102 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=10381404]
+position = Vector2(11, -13)
+emitting = false
+amount = 48
+texture = ExtResource("4_g0dqb")
+lifetime = 4.0
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 15.45
+gravity = Vector2(0, -200)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+color = Color(1, 1, 1, 0.7921569)
+color_ramp = ExtResource("5_d0dut")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1288683683]
+position = Vector2(11, -13)
+emitting = false
+amount = 24
+texture = ExtResource("6_bkug8")
+lifetime = 4.0
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 15.45
+gravity = Vector2(0, -200)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+color = Color(1, 1, 1, 0.7921569)
+color_ramp = ExtResource("5_d0dut")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=907119824]
+libraries/ = SubResource("AnimationLibrary_bkug8")
+
+[node name="BodyCenter" type="CPUParticles2D" parent="." unique_id=1588628828]
+position = Vector2(1, 0)
+emitting = false
+amount = 1
+texture = ExtResource("7_8covk")
+lifetime = 1.2
+one_shot = true
+direction = Vector2(0, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_wng0y")
+
+[node name="BodyRight" type="CPUParticles2D" parent="." unique_id=2090402019]
+position = Vector2(-1, 1)
+emitting = false
+amount = 1
+texture = ExtResource("8_v63t8")
+lifetime = 1.2
+one_shot = true
+direction = Vector2(1, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_wng0y")
+
+[node name="BodyLeft" type="CPUParticles2D" parent="." unique_id=820131557]
+position = Vector2(-4, 0)
+emitting = false
+amount = 1
+texture = ExtResource("9_ygkmh")
+lifetime = 1.2
+one_shot = true
+direction = Vector2(-1, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_wng0y")
+
+[node name="CristalBig" type="CPUParticles2D" parent="." unique_id=803303816]
+position = Vector2(1, -1)
+emitting = false
+amount = 1
+texture = ExtResource("10_7ktbc")
+lifetime = 1.2
+one_shot = true
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+color_ramp = SubResource("Gradient_wng0y")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

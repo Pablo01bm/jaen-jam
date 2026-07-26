@@ -11,6 +11,69 @@
 [ext_resource type="PackedScene" uid="uid://cvhhvyf8nv3lq" path="res://scenes/music_player/MusicPlayer.tscn" id="9_2tlph"]
 [ext_resource type="PackedScene" uid="uid://cojyexrabh4aq" path="res://scenes/Level/LevelAnimation/LevelAnimation.tscn" id="10_co1g4"]
 [ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="11_ln88h"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="12_pmtkt"]
+[ext_resource type="Texture2D" uid="uid://dru5k4axlqvxc" path="res://assets/clock.png" id="12_yx2pc"]
+
+[sub_resource type="Animation" id="Animation_bxmbf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.345, 1.345)]
+}
+
+[sub_resource type="Animation" id="Animation_l2qqt"]
+resource_name = "tictac"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.6666667, 1.1, 1.4, 1.6666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.3490658503988659, 0.3490658503988659, -0.3490658503988659, 0.3490658503988659, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334, 0.43333334, 1.1333333, 1.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.345, 1.345), Vector2(1.925, 1.925), Vector2(1.925, 1.925), Vector2(1.345, 1.345)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pmtkt"]
+_data = {
+&"RESET": SubResource("Animation_bxmbf"),
+&"tictac": SubResource("Animation_l2qqt")
+}
 
 [node name="LevelB2" type="Node2D" unique_id=1545661808]
 script = ExtResource("1_sjv5f")
@@ -57,16 +120,6 @@ one_shot = true
 
 [node name="Background" parent="." unique_id=1086620487 instance=ExtResource("7_j36be")]
 
-[node name="TimeLeft" type="Label" parent="." unique_id=1012525937]
-z_index = 70
-offset_left = -57.0
-offset_top = -492.0
-offset_right = 56.0
-offset_bottom = -441.0
-scale = Vector2(4.285952, 4.285952)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "0.0"
-
 [node name="Asteroid" parent="." unique_id=602204702 instance=ExtResource("8_lqic7")]
 
 [node name="FinishTimer" type="Timer" parent="." unique_id=38996059]
@@ -80,3 +133,24 @@ position = Vector2(-751, -501)
 
 [node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("11_ln88h")]
 position = Vector2(-751, -520)
+
+[node name="TimeLeft" type="Label" parent="." unique_id=682874545]
+z_index = 70
+offset_left = -10.0
+offset_top = -497.0
+offset_right = 92.0
+offset_bottom = -398.0
+scale = Vector2(1.5003545, 1.5003545)
+theme = ExtResource("12_pmtkt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+text = "0.0"
+
+[node name="Sprite2D" type="Sprite2D" parent="TimeLeft" unique_id=577007378]
+position = Vector2(-39, 50.999992)
+scale = Vector2(1.345, 1.345)
+texture = ExtResource("12_yx2pc")
+offset = Vector2(-30.76751, 456.8977)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TimeLeft" unique_id=1863568325]
+libraries/ = SubResource("AnimationLibrary_pmtkt")

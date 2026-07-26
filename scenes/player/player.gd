@@ -48,7 +48,8 @@ func debug_draw_explosion():
 
 func _shoot() -> void:
 	if failed_shot or innocent_killed: 
-		$AnimationPlayer.play("error")
+		#$AnimationPlayer.play("error")
+		$Error.play()
 	if shoot_ready:
 		$AfterShoot.start()
 		$Shoot.play()

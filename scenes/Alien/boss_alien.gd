@@ -59,6 +59,13 @@ func receive_hit() -> void:
 		die()
 	else:
 		$Timer.start()
+		$CPUParticles2D.restart()
+		$CPUParticles2D2.restart()
+		$BodyCenter.restart()
+		$BodyRight.restart()
+		$BodyLeft.restart()
+		$CristalBig.restart()
+		$AnimationPlayer.play("shake")
 		$Starting.stop()
 
 func die() -> void:
@@ -75,3 +82,8 @@ func die() -> void:
 		get_parent().get_parent().add_child(particle)
 	died.emit(self)
 	queue_free()
+
+
+func _on_timer_timeout() -> void:
+	$CPUParticles2D.emitting = false
+	$CPUParticles2D2.emitting = false

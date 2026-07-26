@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://bkiocoi15rcqa"]
+
+[ext_resource type="FontFile" uid="uid://emwl5yjipqkl" path="res://assets/fonts/Baby_Eskimo_Kisses.ttf" id="1_5hg84"]
+
+[resource]
+Label/fonts/font = ExtResource("1_5hg84")

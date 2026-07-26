@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dkhfai5amj0mv" path="res://scenes/Alien/Alien.tscn" id="4_65uhi"]
 [ext_resource type="PackedScene" uid="uid://je8lojjxe50u" path="res://scenes/list/WantedList.tscn" id="5_0ptrk"]
 [ext_resource type="Texture2D" uid="uid://cw7naoilpdgqi" path="res://scenes/Level/LevelE/house.png" id="6_48u3f"]
+[ext_resource type="Texture2D" uid="uid://dru5k4axlqvxc" path="res://assets/clock.png" id="6_gjn6l"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="6_l2qqt"]
 [ext_resource type="PackedScene" uid="uid://bjfxvblrx2jb6" path="res://scenes/camera/Camera.tscn" id="6_t1lsa"]
 [ext_resource type="Texture2D" uid="uid://bhxnyeh7drw5p" path="res://scenes/Level/LevelE/door.png" id="7_gjn6l"]
 [ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_k6ue1"]
@@ -87,6 +89,67 @@ _data = {
 &"boss": SubResource("Animation_gjn6l")
 }
 
+[sub_resource type="Animation" id="Animation_bxmbf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.345, 1.345)]
+}
+
+[sub_resource type="Animation" id="Animation_l2qqt"]
+resource_name = "tictac"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.6666667, 1.1, 1.4, 1.6666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.3490658503988659, 0.3490658503988659, -0.3490658503988659, 0.3490658503988659, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334, 0.43333334, 1.1333333, 1.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.345, 1.345), Vector2(1.925, 1.925), Vector2(1.925, 1.925), Vector2(1.345, 1.345)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bxmbf"]
+_data = {
+&"RESET": SubResource("Animation_bxmbf"),
+&"tictac": SubResource("Animation_l2qqt")
+}
+
 [node name="LevelE" type="Node2D" unique_id=1252264966]
 script = ExtResource("1_dse53")
 HIJOPUTA_COUNT = 3
@@ -136,16 +199,6 @@ position = Vector2(17, -4)
 wait_time = 20.0
 one_shot = true
 
-[node name="TimeLeft" type="Label" parent="." unique_id=2075339793]
-z_index = 70
-offset_left = -57.0
-offset_top = -492.0
-offset_right = 56.0
-offset_bottom = -441.0
-scale = Vector2(4.285952, 4.285952)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "0.0"
-
 [node name="House" type="Node2D" parent="." unique_id=110285862]
 z_index = -3
 position = Vector2(77, 257)
@@ -173,8 +226,28 @@ one_shot = true
 position = Vector2(-755, -503)
 
 [node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("10_44it4")]
-visible = false
 position = Vector2(-751, -520)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2100698679]
 libraries/ = SubResource("AnimationLibrary_l2qqt")
+
+[node name="TimeLeft" type="Label" parent="." unique_id=1267705919]
+z_index = 70
+offset_left = -10.0
+offset_top = -497.0
+offset_right = 92.0
+offset_bottom = -398.0
+scale = Vector2(1.5003545, 1.5003545)
+theme = ExtResource("6_l2qqt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+text = "0.0"
+
+[node name="Sprite2D" type="Sprite2D" parent="TimeLeft" unique_id=1567386757]
+position = Vector2(-39, 50.999992)
+scale = Vector2(1.345, 1.345)
+texture = ExtResource("6_gjn6l")
+offset = Vector2(-30.76751, 456.8977)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TimeLeft" unique_id=253312725]
+libraries/ = SubResource("AnimationLibrary_bxmbf")

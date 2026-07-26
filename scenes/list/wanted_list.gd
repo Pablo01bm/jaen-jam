@@ -33,6 +33,8 @@ func _on_area_2d_mouse_exited() -> void:
 
 
 func move_up():
+	$PageUp.pitch_scale = 1.2
+	$PageUp.play()
 	GameGlobals.is_opened.emit()
 	
 	if !reloaded:
@@ -46,6 +48,8 @@ func move_up():
 		tween.kill()
 	tween = get_tree().create_tween()
 	tween.parallel().tween_property($Sprite2D, "position", Vector2(0.0, 4.0), 0.4)
+	tween.parallel().tween_property($ColorRect, "modulate:a", 1.0, 0.4)
+	tween.parallel().tween_property($Arrow, "modulate:a", 1.0, 0.4)
 	tween.parallel().tween_method(set_shader_value, Vector2.ZERO, blur, 0.2)
 	tween.set_ease(Tween.EASE_OUT)
 	#tween.set_trans(Tween.TRANS_CUBIC)
@@ -53,12 +57,16 @@ func move_up():
 	
 
 func move_down():
+	$PageUp.pitch_scale = 0.8
+	$PageUp.play()
 	GameGlobals.is_closed.emit()
 	if tween != null:
 		tween.stop()
 		tween.kill()
 	tween = get_tree().create_tween()
 	tween.parallel().tween_property($Sprite2D, "position", Vector2(0.0, 707.0), 0.4)
+	tween.parallel().tween_property($ColorRect, "modulate:a", 0.0, 0.4)
+	tween.parallel().tween_property($Arrow, "modulate:a", 0.0, 0.4)
 	tween.parallel().tween_method(set_shader_value, blur, Vector2.ZERO, 0.2)
 	tween.set_ease(Tween.EASE_OUT)
 	#tween.set_trans(Tween.TRANS_CUBIC)

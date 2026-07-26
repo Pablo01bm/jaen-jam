@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://5utkgn58eenj" path="res://scenes/LevelResults/level_results.gd" id="1_j40pc"]
 [ext_resource type="AudioStream" uid="uid://c66nvb6nws76r" path="res://assets/hijoputa-ost/results.ogg" id="2_01nrt"]
+[ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="3_drcly"]
+[ext_resource type="FontFile" uid="uid://40afjkb21hyc" path="res://assets/fonts/Aurestria Free.ttf" id="4_5sypr"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="5_5sypr"]
+[ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="6_j8tfk"]
+[ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="7_wlt3r"]
 
 [node name="LevelResults" type="Node2D" unique_id=2020368190]
 script = ExtResource("1_j40pc")
@@ -16,6 +21,100 @@ offset_bottom = 23.0
 
 [node name="Results" type="AudioStreamPlayer" parent="." unique_id=1045404218]
 stream = ExtResource("2_01nrt")
+volume_db = 8.0
 autoplay = true
 
+[node name="Aliens" type="Node2D" parent="." unique_id=2115223077]
+
+[node name="AlienFace" parent="Aliens" unique_id=548084301 instance=ExtResource("3_drcly")]
+visible = false
+position = Vector2(154, 303)
+scale = Vector2(2.2613935, 2.2613935)
+
+[node name="Label" type="Label" parent="Aliens/AlienFace" unique_id=1911457927]
+offset_left = 45.98934
+offset_top = -9.28631
+offset_right = 839.9893
+offset_bottom = 37.71369
+scale = Vector2(0.5018077, 0.5018077)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5sypr")
+theme_override_font_sizes/font_size = 38
+text = "Crimen crimn crimen cerimen crimen crimen crimen"
+
+[node name="AlienFace2" parent="Aliens" unique_id=2094216303 instance=ExtResource("3_drcly")]
+visible = false
+position = Vector2(154, 478)
+scale = Vector2(2.2613935, 2.2613935)
+
+[node name="Label" type="Label" parent="Aliens/AlienFace2" unique_id=832132523]
+offset_left = 45.98934
+offset_top = -9.28631
+offset_right = 839.9893
+offset_bottom = 37.71369
+scale = Vector2(0.5018077, 0.5018077)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5sypr")
+theme_override_font_sizes/font_size = 38
+text = "Crimen crimn crimen cerimen crimen crimen crimen"
+
+[node name="AlienFace3" parent="Aliens" unique_id=90214353 instance=ExtResource("3_drcly")]
+visible = false
+position = Vector2(154, 646)
+scale = Vector2(2.2613935, 2.2613935)
+
+[node name="Label" type="Label" parent="Aliens/AlienFace3" unique_id=2052599680]
+offset_left = 45.98934
+offset_top = -9.28631
+offset_right = 839.9893
+offset_bottom = 37.71369
+scale = Vector2(0.5018077, 0.5018077)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5sypr")
+theme_override_font_sizes/font_size = 38
+text = "Crimen crimn crimen cerimen crimen crimen crimen"
+
+[node name="Criminals" type="Label" parent="." unique_id=693914831]
+offset_left = 69.000015
+offset_top = 17.000008
+offset_right = 509.0
+offset_bottom = 152.0
+scale = Vector2(1.5119823, 1.5119823)
+theme = ExtResource("5_5sypr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "CRIMINALS"
+
+[node name="CurrentTime" type="Label" parent="." unique_id=1768268234]
+offset_left = 537.0
+offset_top = 815.0
+offset_right = 1128.0
+offset_bottom = 950.0
+scale = Vector2(1.1510514, 1.1510514)
+theme = ExtResource("5_5sypr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "current time"
+
+[node name="Time" type="Label" parent="." unique_id=1939525348]
+offset_left = 1249.0
+offset_top = 815.0
+offset_right = 1840.0
+offset_bottom = 950.0
+scale = Vector2(1.1510514, 1.1510514)
+theme = ExtResource("5_5sypr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "10.0S"
+
+[node name="Player" parent="." unique_id=126226238 instance=ExtResource("6_j8tfk")]
+
+[node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("7_wlt3r")]
+visible = false
+
+[node name="Timer" type="Timer" parent="." unique_id=505332536]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="finished" from="Results" to="." method="_on_results_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,12 +1,50 @@
 [gd_scene format=3 uid="uid://cwwiutdklto20"]
 
 [ext_resource type="Script" uid="uid://b72k2xeghvlvq" path="res://scenes/game_over/game_over.gd" id="1_alkiy"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="2_hybh5"]
+[ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="3_b1at3"]
+[ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="4_b1at3"]
+[ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="5_j7ijp"]
 
 [node name="GameOver" type="Node2D" unique_id=603088769]
 script = ExtResource("1_alkiy")
 
-[node name="Label" type="Label" parent="." unique_id=1157421707]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Times up" type="Label" parent="." unique_id=1778675176]
+offset_left = -1140.0
+offset_top = -464.0
+offset_right = -49.0
+offset_bottom = -327.0
+scale = Vector2(2.118326, 2.118326)
+theme = ExtResource("2_hybh5")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "game over"
+theme_override_font_sizes/font_size = 122
+text = "TIMES UP!!"
+horizontal_alignment = 1
+
+[node name="Times up2" type="Label" parent="." unique_id=1202964064]
+offset_left = -1140.0
+offset_top = -288.0
+offset_right = -49.0
+offset_bottom = -151.0
+scale = Vector2(2.118326, 2.118326)
+theme = ExtResource("2_hybh5")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 122
+text = "Try again?"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=694379202]
+
+[node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("3_b1at3")]
+position = Vector2(-861, -483)
+
+[node name="AlienFace" parent="." unique_id=548084301 instance=ExtResource("4_b1at3")]
+position = Vector2(0, 231.99998)
+scale = Vector2(4.7913685, 4.7913685)
+
+[node name="Timer" type="Timer" parent="." unique_id=2119306760]
+wait_time = 2.0
+
+[node name="Player" parent="." unique_id=126226238 instance=ExtResource("5_j7ijp")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
