@@ -1,20 +1,126 @@
 [gd_scene format=3 uid="uid://b2ry6foucuy0y"]
 
 [ext_resource type="Script" uid="uid://b451wq1s5sead" path="res://scenes/game_completed/game_completed.gd" id="1_mbt3w"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="2_rbax3"]
+[ext_resource type="FontFile" uid="uid://emwl5yjipqkl" path="res://assets/fonts/Baby_Eskimo_Kisses.ttf" id="3_y0wr8"]
+[ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="4_qqrwy"]
+[ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="5_k2x2a"]
 
 [node name="GameCompleted" type="Node2D" unique_id=1516626381]
 script = ExtResource("1_mbt3w")
 
-[node name="Label" type="Label" parent="." unique_id=460289877]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Completed" type="Label" parent="." unique_id=460289877]
+offset_left = 197.0
+offset_top = 8.0
+offset_right = 1288.0
+offset_bottom = 145.0
+theme = ExtResource("2_rbax3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "game completed"
+theme_override_font_sizes/font_size = 122
+text = "GAME COMPLETED!!"
+horizontal_alignment = 1
 
 [node name="Score" type="Label" parent="." unique_id=757037667]
-offset_left = 20.0
-offset_top = 32.0
-offset_right = 149.0
-offset_bottom = 55.0
+offset_left = 268.99994
+offset_top = 782.0
+offset_right = 1201.895
+offset_bottom = 950.0
+scale = Vector2(0.72, 0.72)
+theme = ExtResource("2_rbax3")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "game completed"
+theme_override_font_sizes/font_size = 120
+text = "10:00"
+
+[node name="Score2" type="Label" parent="." unique_id=125757538]
+offset_left = -179.99997
+offset_top = 782.0
+offset_right = 752.895
+offset_bottom = 950.0
+scale = Vector2(0.72, 0.72)
+theme = ExtResource("2_rbax3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "TIME:"
+horizontal_alignment = 1
+
+[node name="HighScore" type="Label" parent="." unique_id=1446905333]
+offset_left = 580.0
+offset_top = 892.0
+offset_right = 1512.895
+offset_bottom = 1060.0
+scale = Vector2(0.72, 0.72)
+theme = ExtResource("2_rbax3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "10:00"
+
+[node name="HighScore2" type="Label" parent="." unique_id=1158846930]
+offset_left = -25.0
+offset_top = 892.0
+offset_right = 907.895
+offset_bottom = 1060.0
+scale = Vector2(0.72, 0.72)
+theme = ExtResource("2_rbax3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "HIGH SCORE:"
+horizontal_alignment = 1
+
+[node name="NewRecord" type="RichTextLabel" parent="." unique_id=2006535724]
+visible = false
+offset_left = 474.0
+offset_top = 102.0
+offset_right = 989.0
+offset_bottom = 261.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_y0wr8")
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][font_size={92}]NEW RECORD!!![/font_size][/wave]"
+horizontal_alignment = 1
+
+[node name="ClickToSave" type="RichTextLabel" parent="." unique_id=954671481]
+visible = false
+offset_left = 343.0
+offset_top = 590.0
+offset_right = 1132.0
+offset_bottom = 833.5942
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_y0wr8")
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][font_size={92}]SHOOT TO SAVE SCORE[/font_size][/wave]"
+horizontal_alignment = 1
+
+[node name="YourFace" type="RichTextLabel" parent="." unique_id=1447836919]
+visible = false
+offset_left = 474.0
+offset_top = 488.0
+offset_right = 989.0
+offset_bottom = 647.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_y0wr8")
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][font_size={72
+}]YOUR NEW FACE[/font_size][/wave]"
+horizontal_alignment = 1
+
+[node name="AlienFace" parent="." unique_id=548084301 instance=ExtResource("4_qqrwy")]
+visible = false
+position = Vector2(741, 377)
+scale = Vector2(3.815, 3.815)
+
+[node name="AlienFace2" parent="." unique_id=430993818 instance=ExtResource("4_qqrwy")]
+position = Vector2(884, 908)
+scale = Vector2(1.99, 1.99)
+
+[node name="Timer" type="Timer" parent="." unique_id=2062575815]
+
+[node name="Timer2" type="Timer" parent="." unique_id=294927515]
+wait_time = 3.0
+
+[node name="Player" parent="." unique_id=126226238 instance=ExtResource("5_k2x2a")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
