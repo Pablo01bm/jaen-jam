@@ -16,6 +16,7 @@ func _ready():
 		$AlienFace.visible = true
 		$NewRecord.visible = true
 		$ClickToSave.visible = true
+		$NotScore.visible = false
 	var face = GameGlobals.get_high_score_face()
 	if !face.is_empty():
 		$AlienFace2.update_face(face)

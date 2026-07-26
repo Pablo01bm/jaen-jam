@@ -44,6 +44,20 @@ theme_override_font_sizes/font_size = 120
 text = "YOUR TIME:"
 horizontal_alignment = 1
 
+[node name="NotScore" type="RichTextLabel" parent="." unique_id=771533390]
+offset_left = 69.00003
+offset_top = 221.00002
+offset_right = 612.0
+offset_bottom = 448.0
+scale = Vector2(2.4611182, 2.4611182)
+theme_override_colors/default_color = Color(0.81919646, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_y0wr8")
+bbcode_enabled = true
+text = "
+[center][wave amp=50.0 freq=5.0 connected=1][font_size={72
+}]CAN YOU BEAT THE HIGH SCORE?[/font_size][/wave]"
+horizontal_alignment = 1
+
 [node name="HighScore" type="Label" parent="." unique_id=1446905333]
 offset_left = 623.0
 offset_top = 831.1431
@@ -52,7 +66,7 @@ offset_bottom = 999.1431
 rotation = -0.004114242
 scale = Vector2(1.0794544, 1.0794544)
 theme = ExtResource("2_rbax3")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.81960785, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
 text = "10.0"
 
@@ -63,7 +77,7 @@ offset_right = 775.895
 offset_bottom = 999.1431
 scale = Vector2(1.0794545, 1.0794545)
 theme = ExtResource("2_rbax3")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.81960785, 0, 0, 1)
 theme_override_font_sizes/font_size = 120
 text = "HIGH SCORE:"
 horizontal_alignment = 1
@@ -100,7 +114,7 @@ offset_left = 474.0
 offset_top = 488.0
 offset_right = 989.0
 offset_bottom = 647.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.81960785, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_y0wr8")
 bbcode_enabled = true
 text = "
@@ -125,6 +139,7 @@ wait_time = 3.0
 [node name="Player" parent="." unique_id=126226238 instance=ExtResource("5_k2x2a")]
 
 [node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("6_a57b5")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
