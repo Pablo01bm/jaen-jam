@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://crrjdebmsjf3p" path="res://scenes/list/WantedList.gdshader" id="4_6c201"]
 [ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="4_kn075"]
 [ext_resource type="AudioStream" uid="uid://deeky1stx5yc0" path="res://assets/hijoputa-sounds/reload.wav" id="5_ctnue"]
+[ext_resource type="FontFile" uid="uid://40afjkb21hyc" path="res://assets/fonts/Aurestria Free.ttf" id="6_7vf88"]
 [ext_resource type="Texture2D" uid="uid://3bsol68uoa5b" path="res://assets/arrow.png" id="6_ivkdo"]
 [ext_resource type="AudioStream" uid="uid://bsa5n5kblsqdt" path="res://assets/hijoputa-sounds/turn-page-2.wav" id="7_3gfxk"]
 
@@ -142,11 +143,11 @@ theme_override_font_sizes/font_size = 79
 text = "WANTED!!"
 
 [node name="BadAliens" type="Node2D" parent="Sprite2D" unique_id=1614716022]
-position = Vector2(0, -4)
+position = Vector2(-109, -39)
+scale = Vector2(0.662418, 0.662418)
 
 [node name="AlienFace1" parent="Sprite2D/BadAliens" unique_id=548084301 instance=ExtResource("3_cbkq7")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(-192.00002, 17)
 scale = Vector2(2.4279292, 2.4279292)
 
@@ -157,12 +158,13 @@ offset_right = 116.128006
 offset_bottom = 18.46939
 theme = ExtResource("4_kn075")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_7vf88")
 theme_override_font_sizes/font_size = 32
 text = "Nombre 1"
+metadata/_edit_use_anchors_ = true
 
 [node name="AlienFace2" parent="Sprite2D/BadAliens" unique_id=1314295802 instance=ExtResource("3_cbkq7")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(-192.00002, 208)
 scale = Vector2(2.4279292, 2.4279292)
 
@@ -173,12 +175,12 @@ offset_right = 116.128006
 offset_bottom = 18.46939
 theme = ExtResource("4_kn075")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_7vf88")
 theme_override_font_sizes/font_size = 32
 text = "Nombre 1"
 
 [node name="AlienFace3" parent="Sprite2D/BadAliens" unique_id=1907983893 instance=ExtResource("3_cbkq7")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(-192.00002, 397)
 scale = Vector2(2.4279292, 2.4279292)
 
@@ -189,6 +191,7 @@ offset_right = 116.128006
 offset_bottom = 18.46939
 theme = ExtResource("4_kn075")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_7vf88")
 theme_override_font_sizes/font_size = 32
 text = "Nombre 1"
 
