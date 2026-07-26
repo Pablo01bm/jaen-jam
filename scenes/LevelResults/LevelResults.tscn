@@ -110,7 +110,6 @@ text = "10.0S"
 [node name="Player" parent="." unique_id=126226238 instance=ExtResource("6_j8tfk")]
 
 [node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("7_wlt3r")]
-visible = false
 
 [node name="Timer" type="Timer" parent="." unique_id=505332536]
 wait_time = 2.0
