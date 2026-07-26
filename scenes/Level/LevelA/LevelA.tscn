@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="7_0rgr4"]
 [ext_resource type="PackedScene" uid="uid://cvhhvyf8nv3lq" path="res://scenes/music_player/MusicPlayer.tscn" id="8_bi7lx"]
 [ext_resource type="PackedScene" uid="uid://cojyexrabh4aq" path="res://scenes/Level/LevelAnimation/LevelAnimation.tscn" id="9_kille"]
+[ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="10_hsgin"]
 
 [node name="LevelA" type="Node2D" unique_id=1252264966]
 script = ExtResource("1_pth44")
@@ -75,3 +76,6 @@ one_shot = true
 
 [node name="LevelAnimation" parent="." unique_id=227420322 instance=ExtResource("9_kille")]
 position = Vector2(-755, -503)
+
+[node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("10_hsgin")]
+position = Vector2(-751, -520)

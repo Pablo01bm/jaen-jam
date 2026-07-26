@@ -8,20 +8,23 @@ var innocent_killed = false
 func _ready():
 	GameGlobals.is_opened.connect(_prepare_mouse)
 	GameGlobals.is_closed.connect(_enable_shooting)
+	GameGlobals.level_finished.connect(func():
+		is_shooting = false
+		)
 
 func _process(delta: float) -> void:
 	
 	var mouse_position = get_global_mouse_position()
 	
+	_rotate_heircross(delta, $HeircrossFail)
+	_rotate_heircross(delta,$Heircross)
+	
 	if failed_shot || innocent_killed:
 		_process_cooldown()
 		$HeircrossFail.global_position = mouse_position
-		_rotate_heircross(delta, $HeircrossFail)
 	
 	if (is_shooting == true):
 		$Heircross.global_position = mouse_position
-		
-		_rotate_heircross(delta,$Heircross )
 		if Input.is_action_just_pressed("shoot"):
 			_shoot()
 	else:

@@ -26,7 +26,7 @@ func _ready() -> void:
 	$Timer.timeout.connect(_game_over)
 	$TimeLeft.text = str($Timer.wait_time)
 	GameGlobals.is_closed.connect(func(): started = true)
-	$FinishTimer.timeout.connect(victory)
+	$FinishTimer.timeout.connect(finish)
 
 func _process(delta):
 	if started:
@@ -99,16 +99,22 @@ func _check_victory() -> void:
 	$Timer.paused = true
 	$FinishTimer.start()
 	GameGlobals.level_finished.emit()
+	$Curtain.curtain_down()
 	
 
-func victory():
-	level_completed.emit()
+func finish():
+	if $Timer.time_left > 0:
+		level_completed.emit()
+	else:
+		GameGlobals.alien_motherfuckers.clear()
+		GameManager.game_over()
 
 
 func _game_over() -> void:
 	$Timer.stop()
-	GameGlobals.alien_motherfuckers.clear()
-	GameManager.game_over()
+	$FinishTimer.start()
+	$Curtain.curtain_down()
+	GameGlobals.level_finished.emit()
 
 func _assign_z_index() -> void:
 	var aliensNode = get_node("Aliens")
