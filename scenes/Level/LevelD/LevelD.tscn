@@ -80,7 +80,6 @@ one_shot = true
 position = Vector2(-751, -501)
 
 [node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("11_5428u")]
-visible = false
 position = Vector2(-751, -520)
 
 [node name="Train" parent="." unique_id=967465228 instance=ExtResource("11_hyhqm")]
