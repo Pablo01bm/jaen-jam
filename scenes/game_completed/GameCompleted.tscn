@@ -128,7 +128,7 @@ position = Vector2(741, 377)
 scale = Vector2(3.815, 3.815)
 
 [node name="AlienFace2" parent="." unique_id=430993818 instance=ExtResource("4_qqrwy")]
-position = Vector2(910, 894)
+position = Vector2(945, 894)
 scale = Vector2(1.99, 1.99)
 
 [node name="Timer" type="Timer" parent="." unique_id=2062575815]

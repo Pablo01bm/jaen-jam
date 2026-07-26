@@ -3,8 +3,8 @@ class_name Alien
 
 signal died(alien: Alien)
 
-var SPEED_X = RandomNumberGenerator.new()
-var SPEED_Y = RandomNumberGenerator.new()
+var SPEED_X = 150.0
+var SPEED_Y = 150.0
 var RANDOM = RandomNumberGenerator.new()
 @export var Z_INDEX_VALUE = 0
 
@@ -14,8 +14,8 @@ var RANDOM = RandomNumberGenerator.new()
  
 func _ready():
 	# We define random movement direction
-	SPEED_X = SPEED_X.randf_range(-200.0, 200.0)
-	SPEED_Y = SPEED_Y.randf_range(-200.0, 200.0)
+	SPEED_X = randf_range(-200.0, 200.0)
+	SPEED_Y = randf_range(-200.0, 200.0)
 	velocity.x = SPEED_X
 	velocity.y = SPEED_Y
 	z_index = Z_INDEX_VALUE
