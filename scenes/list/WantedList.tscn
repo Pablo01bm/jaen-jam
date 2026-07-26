@@ -148,6 +148,7 @@ scale = Vector2(0.662418, 0.662418)
 
 [node name="AlienFace1" parent="Sprite2D/BadAliens" unique_id=548084301 instance=ExtResource("3_cbkq7")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-192.00002, 17)
 scale = Vector2(2.4279292, 2.4279292)
 
@@ -165,6 +166,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AlienFace2" parent="Sprite2D/BadAliens" unique_id=1314295802 instance=ExtResource("3_cbkq7")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-192.00002, 208)
 scale = Vector2(2.4279292, 2.4279292)
 
@@ -181,6 +183,7 @@ text = "Nombre 1"
 
 [node name="AlienFace3" parent="Sprite2D/BadAliens" unique_id=1907983893 instance=ExtResource("3_cbkq7")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-192.00002, 397)
 scale = Vector2(2.4279292, 2.4279292)
 
