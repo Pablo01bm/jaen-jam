@@ -6,7 +6,7 @@ const LEVELS := [
 	"res://scenes/Level/LevelB/LevelB.tscn",
 	"res://scenes/Level/LevelC/LevelC.tscn",
 	"res://scenes/Level/LevelD/LevelD.tscn",
-	
+	"res://scenes/Level/LevelE/LevelE.tscn",
 ]
 
 const MENUS := [
@@ -29,6 +29,8 @@ signal is_closed
 
 signal level_started
 signal level_finished
+
+signal boss_appeared
  
 func reset() -> void:
 	current_level_index = 0

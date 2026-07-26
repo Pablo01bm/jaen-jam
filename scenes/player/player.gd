@@ -9,7 +9,8 @@ func _ready():
 	GameGlobals.is_opened.connect(_prepare_mouse)
 	GameGlobals.is_closed.connect(_enable_shooting)
 	GameGlobals.level_finished.connect(func():
-		is_shooting = false
+		#is_shooting = false
+		pass
 		)
 
 func _process(delta: float) -> void:

@@ -84,7 +84,9 @@ position = Vector2(-751, -520)
 
 [node name="Train" parent="." unique_id=967465228 instance=ExtResource("11_hyhqm")]
 position = Vector2(-1549, -265)
+speed = 600
 
 [node name="Train2" parent="." unique_id=1642984413 instance=ExtResource("11_hyhqm")]
 position = Vector2(1511, 162)
 scale = Vector2(-1, 1)
+speed = 600

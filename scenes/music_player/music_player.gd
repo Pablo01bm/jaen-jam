@@ -9,6 +9,7 @@ func _ready() -> void:
 	$Kill.play()
 	GameGlobals.is_closed.connect(kill)
 	GameGlobals.level_finished.connect(level_finished)
+	GameGlobals.boss_appeared.connect(boss)
 	print("ready")
 
 
@@ -29,8 +30,14 @@ func level_finished():
 	tween = get_tree().create_tween()
 	tween.parallel().tween_property($Kill, "pitch_scale", 0.6, 2.0)
 	tween.parallel().tween_property($Kill, "volume_db", -80.0, 2.0)
+	tween.parallel().tween_property($Boss, "pitch_scale", 0.6, 2.0)
+	tween.parallel().tween_property($Boss, "volume_db", -80.0, 2.0)
 	tween.play()
 
+func boss():
+	$Boss.pitch_scale = 1.0
+	$Boss.volume_db = 0.0
+	$Boss.play()
 
 func _on_wanted_finished() -> void:
 	$Wanted.play()
@@ -38,3 +45,7 @@ func _on_wanted_finished() -> void:
 
 func _on_kill_finished() -> void:
 	$Kill.play()
+
+
+func _on_boss_finished() -> void:
+	$Boss.play()
