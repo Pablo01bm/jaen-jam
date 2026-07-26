@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://emwl5yjipqkl" path="res://assets/fonts/Baby_Eskimo_Kisses.ttf" id="3_y0wr8"]
 [ext_resource type="PackedScene" uid="uid://2wms76ry4tq7" path="res://scenes/alien_face/AlienFace.tscn" id="4_qqrwy"]
 [ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="5_k2x2a"]
+[ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="6_a57b5"]
 
 [node name="GameCompleted" type="Node2D" unique_id=1516626381]
 script = ExtResource("1_mbt3w")
@@ -122,6 +123,8 @@ scale = Vector2(1.99, 1.99)
 wait_time = 3.0
 
 [node name="Player" parent="." unique_id=126226238 instance=ExtResource("5_k2x2a")]
+
+[node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("6_a57b5")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

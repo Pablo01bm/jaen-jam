@@ -1,11 +1,60 @@
 [gd_scene format=3 uid="uid://d3tc05wfjiayt"]
 
 [ext_resource type="Script" uid="uid://dmfg62wawrfgv" path="res://scenes/title_screen/title_screen.gd" id="1_bludd"]
+[ext_resource type="PackedScene" uid="uid://b5q66jr5ua80d" path="res://scenes/Level/background/Background.tscn" id="2_v34dk"]
+[ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="3_2eqt7"]
+[ext_resource type="PackedScene" uid="uid://b3re1fybwh81o" path="res://scenes/Level/Curtain/Curtain.tscn" id="4_2eqt7"]
+[ext_resource type="Theme" uid="uid://bkiocoi15rcqa" path="res://assets/text_theme.tres" id="5_hurun"]
 
 [node name="TitleScreen" type="Node2D" unique_id=1412855463]
 script = ExtResource("1_bludd")
 
-[node name="Label" type="Label" parent="." unique_id=1884771490]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "title screen"
+[node name="Background" parent="." unique_id=1086620487 instance=ExtResource("2_v34dk")]
+
+[node name="Player" parent="." unique_id=126226238 instance=ExtResource("3_2eqt7")]
+
+[node name="Curtain" parent="." unique_id=1844556041 instance=ExtResource("4_2eqt7")]
+position = Vector2(-797, -508)
+
+[node name="Timer" type="Timer" parent="." unique_id=852484281]
+wait_time = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1435539368]
+
+[node name="SOAB" type="Label" parent="." unique_id=906669886]
+offset_left = -1140.0
+offset_top = -431.0
+offset_right = -49.0
+offset_bottom = -294.0
+scale = Vector2(2.118326, 2.118326)
+theme = ExtResource("5_hurun")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 122
+text = "S.O.A.B."
+horizontal_alignment = 1
+
+[node name="SOAB2" type="Label" parent="." unique_id=777794866]
+offset_left = -1140.0
+offset_top = -281.00003
+offset_right = -49.0
+offset_bottom = -144.00003
+scale = Vector2(2.118326, 2.118326)
+theme = ExtResource("5_hurun")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 122
+text = "KILLER"
+horizontal_alignment = 1
+
+[node name="SOAB3" type="Label" parent="." unique_id=1409610423]
+offset_left = -756.0
+offset_top = -54.999996
+offset_right = 335.0
+offset_bottom = 82.0
+scale = Vector2(1.4453773, 1.4453773)
+theme = ExtResource("5_hurun")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 122
+text = "SHOOT TO START"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

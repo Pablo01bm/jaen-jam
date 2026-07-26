@@ -7,6 +7,7 @@ func _ready():
 	GameGlobals.score = snapped(GameGlobals.score, 0.1)
 	$Score.text = str(GameGlobals.score) + "s"
 	$HighScore.text = str(GameGlobals.high_score) + "s"
+	$Curtain.curtain_up()
 	$Player._prepare_mouse()
 	$Player._enable_shooting()
 	is_record = GameGlobals.score < GameGlobals.high_score

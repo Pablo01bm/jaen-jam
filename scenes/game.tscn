@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://620c27ltlug3" path="res://scenes/game.gd" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cml4nuk5k2ym2" path="res://utils/state_machine/state_machine.gd" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://djwh6m25juddv" path="res://scenes/player/Player.tscn" id="3_lnu2h"]
 
 [sub_resource type="GDScript" id="GDScript_yqjtg"]
 script/source = "extends GameState
@@ -93,5 +92,3 @@ script = SubResource("GDScript_lbhrr")
 
 [node name="GameCompletedState" type="Node" parent="StateMachine" unique_id=1464228282]
 script = SubResource("GDScript_iywne")
-
-[node name="Player" parent="." unique_id=126226238 instance=ExtResource("3_lnu2h")]
